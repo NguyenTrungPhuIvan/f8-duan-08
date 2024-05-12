@@ -1,3 +1,2 @@
 import { load } from "./load.js";
-
-export { load };
+export default load;

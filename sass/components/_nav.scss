@@ -1,0 +1,21 @@
+@use "../abstract" as ab;
+
+.nav {
+    margin-left: 144px;
+    &__list {
+        @include ab.flexCenter($j: null);
+        column-gap: 30px;
+    }
+
+    &__item {
+        a {
+            color: var(--text-primary-color);
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.46;
+        }
+        .icon {
+            margin-left: 6px;
+        }
+    }
+}

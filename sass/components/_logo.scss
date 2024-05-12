@@ -1,0 +1,12 @@
+@use "../abstract" as ab;
+
+.logo {
+    @include ab.flexCenter($j: null);
+    column-gap: 14px;
+    span {
+        color: var(--text-primary-color);
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.45;
+    }
+}
