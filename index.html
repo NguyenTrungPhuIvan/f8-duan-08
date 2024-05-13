@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,7 @@
     <body>
         <header id="header"></header>
         <script type="module">
-            import load from "./assets/JS/index.js";
+            import { load } from "./assets/JS/index.js";
             load("#header", "./templates/header.html");
         </script>
 
@@ -51,7 +51,7 @@
 
         <footer id="footer"></footer>
         <script type="module">
-            import load from "./assets/JS/index.js";
+            import { load } from "./assets/JS/index.js";
             load("#footer", "./templates/footer.html");
         </script>
     </body>

@@ -1,40 +1,61 @@
 @use "../abstract" as ab;
 .header {
-    background: #eeeeee;
+    background: var(--header-bg-color);
     padding: 30px 0;
 
     &__row {
         @include ab.flexCenter($j: null);
+        @include ab.breakpoint(sm) {
+            justify-content: space-evenly;
+        }
+        .menu-bars {
+            display: none;
+            margin-right: 30px;
+            @include ab.breakpoint(lg) {
+                display: block;
+            }
+            @include ab.breakpoint(sm) {
+                margin: 0;
+            }
+        }
     }
 
     &__action {
         @include ab.flexCenter($j: null);
         margin-left: auto;
+        @include ab.breakpoint(sm) {
+            margin-left: 0;
+        }
+
         &.header__action {
             @include ab.flexCenter($j: null);
             column-gap: 20px;
         }
         .action-group {
-            background: #fff;
+            background: var(--header-action-gr-bg);
             @include ab.flexCenter($j: null);
             padding: 10px 20px;
             border-radius: 8px;
             column-gap: 20px;
-            box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+            box-shadow: var(--header-action-gr-shadow);
             cursor: pointer;
             &__separate {
-                background: #ededf6;
+                background: var(--header-action-gr-separate-color);
                 width: 1px;
                 height: 30px;
             }
             &--single {
                 padding: 13px 13px;
             }
+
+            @include ab.breakpoint(md) {
+                display: none;
+            }
         }
         .action {
             @include ab.flexCenter();
             column-gap: 10px;
-            color: #1a162e;
+            color: var(--text-primary-color);
 
             font-size: 1.5rem;
             font-weight: 500;

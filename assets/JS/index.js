@@ -1,2 +1,4 @@
 import { load } from "./load.js";
-export default load;
+import { switchThemes } from "./themes.js";
+
+export { load, switchThemes };
