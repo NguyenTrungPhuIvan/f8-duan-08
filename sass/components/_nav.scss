@@ -8,17 +8,19 @@
     }
 
     &__item {
+        @include ab.flexCenter($j: null);
+        column-gap: 6px;
         a {
             color: var(--text-primary-color);
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.46;
         }
-        .icon {
-            margin-left: 6px;
-        }
     }
     @include ab.breakpoint(lg) {
         display: none;
+    }
+    @include ab.breakpoint(xl) {
+        margin-left: 50px;
     }
 }

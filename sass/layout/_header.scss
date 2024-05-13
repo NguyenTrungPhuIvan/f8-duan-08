@@ -5,7 +5,7 @@
 
     &__row {
         @include ab.flexCenter($j: null);
-        @include ab.breakpoint(sm) {
+        @include ab.breakpoint(md) {
             justify-content: space-evenly;
         }
         .menu-bars {
@@ -17,13 +17,16 @@
             @include ab.breakpoint(sm) {
                 margin: 0;
             }
+            @include ab.breakpoint(md) {
+                margin-right: 0;
+            }
         }
     }
 
     &__action {
         @include ab.flexCenter($j: null);
         margin-left: auto;
-        @include ab.breakpoint(sm) {
+        @include ab.breakpoint(md) {
             margin-left: 0;
         }
 
