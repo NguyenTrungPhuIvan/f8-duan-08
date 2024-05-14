@@ -1,26 +1,31 @@
 @use "../abstract" as ab;
 
 .nav {
-    margin-left: 144px;
+    margin-left: 139px;
     &__list {
         @include ab.flexCenter($j: null);
-        column-gap: 30px;
     }
 
     &__item {
-        @include ab.flexCenter($j: null);
-        column-gap: 6px;
-        a {
+        padding: 0 15px;
+
+        &:hover .menu-dropdown {
+            display: block;
+        }
+        & > a {
+            @include ab.flexCenter();
+            column-gap: 6px;
             color: var(--text-primary-color);
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.46;
+            height: 50px;
         }
     }
     @include ab.breakpoint(lg) {
         display: none;
     }
     @include ab.breakpoint(xl) {
-        margin-left: 50px;
+        margin-left: 15px;
     }
 }

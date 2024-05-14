@@ -1,9 +1,13 @@
 @use "../abstract" as ab;
 .header {
     background: var(--header-bg-color);
-    padding: 30px 0;
 
+    @include ab.breakpoint(lg) {
+        box-shadow: var(--header-shadow);
+    }
     &__row {
+        padding: 30px 0;
+        position: relative;
         @include ab.flexCenter($j: null);
         @include ab.breakpoint(md) {
             justify-content: space-evenly;

@@ -143,36 +143,6 @@ html {
   font-size: 62.5%;
 }
 
-html.dark {
-  --header-bg-color: #171c28;
-  --text-primary-color: #fff;
-  --body-bg: #292e39;
-  --filter-icon: brightness(0) saturate(100%) invert(100%) sepia(100%)
-      saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%);
-  --header-action-gr-bg: #292e39;
-  --header-action-gr-separate-color: #ededf6;
-  --header-action-gr-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
-}
-
-:root {
-  --header-bg-color: #eee;
-  --body-bg: #f6f6f6;
-  --text-primary-color: #1a162e;
-  --filter-icon: (
-      brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7488%)
-          hue-rotate(213deg) brightness(98%) contrast(95%)
-  );
-  --header-action-gr-bg: #fff;
-  --header-action-gr-separate-color: #ededf6;
-  --header-action-gr-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
-}
-@media (max-width: 991.98px) {
-  :root {
-    --header-bg-color: #fff;
-    --header-action-gr-bg: #eee;
-  }
-}
-
 body {
   font-family: "Gordita", sans-serif;
   font-size: 1.6rem;

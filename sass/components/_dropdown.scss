@@ -1,0 +1,106 @@
+.menu-dropdown {
+    padding-top: 54px;
+    width: min(1204px, 100%);
+    position: absolute;
+    display: none;
+    left: 0;
+    &__inner {
+        --inner-max-height: min(100vh - 158px, 582px);
+        --inner-padding: 30px;
+        --width-topmenu-main: 292px;
+
+        position: relative;
+        color: var(--dropdown-text);
+        padding: var(--inner-padding);
+        border-radius: 20px;
+        background: var(--dropdown-bg);
+        box-shadow: var(--dropdown-shadow);
+        &::after {
+            position: absolute;
+
+            top: -13px;
+            left: var(--arrow-left-pos);
+            translate: -50%;
+            content: url("../icon/arrow-dropdown.svg");
+            filter: var(--dropdown-filter);
+        }
+    }
+}
+.top-menu {
+    position: relative;
+    &__main {
+        overflow-y: auto;
+        width: var(--width-topmenu-main);
+        height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+
+        border-right: 1px solid var(--dropdown-topmenu-main-border);
+    }
+}
+.menu-column {
+    display: flex;
+    column-gap: 14px;
+    &__icon {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        position: relative;
+        object-fit: contain;
+        &-2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            filter: var(--dropdown-topmenu-icon-filter);
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &__title {
+        margin-top: 4px;
+        a {
+            color: var(--dropdown-topmenu-text);
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+        }
+    }
+    &__list {
+        margin-top: 12px;
+    }
+    &__item--active {
+        & > .menu-column__link,
+        .menu-column__link:hover {
+            color: #0071dc;
+            font-weight: 500;
+        }
+        .sub-menu {
+            display: grid;
+        }
+    }
+
+    &__link {
+        color: var(--dropdown-topmenu-text);
+        display: block;
+        padding: 7px 0px;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+}
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 var(--width-topmenu-main);
+    overflow-y: auto;
+    height: 100%;
+    padding-left: var(--inner-padding);
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+
+    &__column {
+        display: flex;
+        flex-flow: column;
+        row-gap: 30px;
+    }
+}
