@@ -1,3 +1,4 @@
+@use "../abstract" as ab;
 .menu-dropdown {
     padding-top: 54px;
     width: min(1204px, 100%);
@@ -20,7 +21,7 @@
 
             top: -13px;
             left: var(--arrow-left-pos);
-            translate: -50%;
+            transform: translateX(-50%);
             content: url("../icon/arrow-dropdown.svg");
             filter: var(--dropdown-filter);
         }
@@ -51,6 +52,9 @@
             bottom: 0;
             filter: var(--dropdown-topmenu-icon-filter);
             object-fit: contain;
+        }
+        @include ab.breakpoint(xl) {
+            display: none;
         }
     }
 
@@ -102,5 +106,18 @@
         display: flex;
         flex-flow: column;
         row-gap: 30px;
+    }
+    &--not-main {
+        height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+        grid-template-columns: repeat(4, 1fr);
+        position: initial;
+        inset: initial;
+        display: grid;
+        .menu-column__link {
+            &:hover {
+                color: #0071dc;
+                font-weight: 500;
+            }
+        }
     }
 }
