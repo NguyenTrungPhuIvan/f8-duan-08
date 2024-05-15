@@ -20,19 +20,22 @@
         <!-- styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
         <!-- script -->
-        <script src="assets/JS/script.js"></script>
+        <script src="./assets/JS/script.js"></script>
     </head>
     <body>
         <header id="header"></header>
         <script type="module">
+            handleSlideShow();
             load("#header", "./templates/header.html");
         </script>
         <div class="container">
             <section class="slideshow">
                 <div class="slideshow__inner">
                     <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-2.png" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-3.png" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
                 </div>
                 <div class="slideshow__pages">
                     <span class="sildeshow__numb-first">1</span>
@@ -61,7 +64,6 @@
                     </button>
                 </div>
             </section>
-            <script src="./assets/JS/script.js"></script>
         </div>
         <footer id="footer"></footer>
         <script>

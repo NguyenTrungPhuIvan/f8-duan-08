@@ -148,23 +148,30 @@ function handleSlideShow() {
     const slide = $(".slideshow__inner");
     const btnLeft = $(".slideshow__left");
     const btnRight = $(".slideshow__right");
+    const line = $(".slideshow__line");
     const moveCircle = $(".slideshow__move");
+    let lineWidth = 0;
+
+    let step = 0;
+
     let curr = 0;
     let intervalFunc = setInterval(() => {
         handleChangeIMG();
     }, 3000);
-
+    setLineWidth();
     function handleChangeIMG() {
         if (curr == imgs.length - 1) {
             curr = 0;
             let width = imgs[0].offsetWidth;
             slide.style.transform = `translateX(${width * curr * -1}px)`;
             resetInterval();
+            getSteps();
         } else {
             curr++;
             let width = imgs[0].offsetWidth;
             slide.style.transform = `translateX(${width * curr * -1}px)`;
             resetInterval();
+            getSteps();
         }
     }
     btnRight.onclick = handleChangeIMG;
@@ -174,11 +181,13 @@ function handleSlideShow() {
             let width = imgs[0].offsetWidth;
             slide.style.transform = `translateX(${width * curr * -1}px)`;
             resetInterval();
+            getStepsReverse();
         } else {
             curr--;
             let width = imgs[0].offsetWidth;
             slide.style.transform = `translateX(${width * curr * -1}px)`;
             resetInterval();
+            getStepsReverse();
         }
     };
 
@@ -188,12 +197,30 @@ function handleSlideShow() {
             handleChangeIMG();
         }, 3000);
     }
-    function setWidthLine() {
-        const line = $(".slideshow__line");
+
+    function setLineWidth() {
         const numbEnd = $(".sildeshow__numb-end");
-        numbEnd.innerText = `${length}`;
-        let numbItem = parseFloat(length);
-        const lineWidth = numbItem * 36;
+        numbEnd.innerText = `${imgs.length}`;
         line.style.width = `${lineWidth}px`;
+        let numbItem = parseFloat(imgs.length);
+        lineWidth = numbItem * 34;
+        line.style.width = `${lineWidth}px`;
+
+        step = (lineWidth + 14) / (imgs.length - 1);
+    }
+    function getSteps() {
+        if (moveCircle.offsetLeft >= line.offsetWidth) {
+            moveCircle.style.left = `-14px`;
+        } else {
+            moveCircle.style.left = `${moveCircle.offsetLeft + step}px`;
+        }
+    }
+    function getStepsReverse() {
+        if (moveCircle.offsetLeft <= -14) {
+            moveCircle.style.left = `${line.offsetWidth}px`;
+            console.log(line.offsetWidth);
+        } else {
+            moveCircle.style.left = `${moveCircle.offsetLeft - step}px`;
+        }
     }
 }
