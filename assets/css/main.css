@@ -1730,6 +1730,103 @@ html.dark {
   font-weight: 500;
 }
 
+.slideshow {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.slideshow__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 445px;
+  border-radius: 20px;
+  background: #b9babe;
+  transition: 0.4s;
+}
+.slideshow__img {
+  width: inherit;
+  height: inherit;
+  flex-shrink: 0;
+}
+.slideshow__pages {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  position: absolute;
+  bottom: 66px;
+  left: 70px;
+  display: flex;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.slideshow__line {
+  position: relative;
+  background: #fff;
+  width: 180px;
+  height: 4px;
+  flex-shrink: 0;
+}
+.slideshow__line::before, .slideshow__line::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  background: transparent;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 4px solid #fff;
+}
+.slideshow__line::before {
+  left: -10px;
+}
+.slideshow__line::after {
+  right: -10px;
+}
+.slideshow__move {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  left: -10px;
+  display: inline-block;
+  background: transparent;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 4px solid red;
+}
+.slideshow__right, .slideshow__left {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: brightness(0) saturate(100%) invert(8%) sepia(28%) saturate(1463%) hue-rotate(211deg) brightness(90%) contrast(96%);
+  background: rgba(255, 255, 255, 0.5);
+}
+.slideshow__right:hover, .slideshow__left:hover {
+  cursor: pointer;
+}
+.slideshow__right svg, .slideshow__left svg {
+  width: 20px;
+  height: 20px;
+}
+.slideshow__left {
+  left: 0;
+}
+.slideshow__right {
+  right: 0;
+}
+
 .header {
   background: var(--header-bg-color);
 }

@@ -143,3 +143,57 @@ window.addEventListener("template-loaded", () => {
         };
     });
 });
+function handleSlideShow() {
+    const imgs = $$(".js-slideShow-img");
+    const slide = $(".slideshow__inner");
+    const btnLeft = $(".slideshow__left");
+    const btnRight = $(".slideshow__right");
+    const moveCircle = $(".slideshow__move");
+    let curr = 0;
+    let intervalFunc = setInterval(() => {
+        handleChangeIMG();
+    }, 3000);
+
+    function handleChangeIMG() {
+        if (curr == imgs.length - 1) {
+            curr = 0;
+            let width = imgs[0].offsetWidth;
+            slide.style.transform = `translateX(${width * curr * -1}px)`;
+            resetInterval();
+        } else {
+            curr++;
+            let width = imgs[0].offsetWidth;
+            slide.style.transform = `translateX(${width * curr * -1}px)`;
+            resetInterval();
+        }
+    }
+    btnRight.onclick = handleChangeIMG;
+    btnLeft.onclick = () => {
+        if (curr == 0) {
+            curr = imgs.length - 1;
+            let width = imgs[0].offsetWidth;
+            slide.style.transform = `translateX(${width * curr * -1}px)`;
+            resetInterval();
+        } else {
+            curr--;
+            let width = imgs[0].offsetWidth;
+            slide.style.transform = `translateX(${width * curr * -1}px)`;
+            resetInterval();
+        }
+    };
+
+    function resetInterval() {
+        clearInterval(intervalFunc);
+        intervalFunc = setInterval(() => {
+            handleChangeIMG();
+        }, 3000);
+    }
+    function setWidthLine() {
+        const line = $(".slideshow__line");
+        const numbEnd = $(".sildeshow__numb-end");
+        numbEnd.innerText = `${length}`;
+        let numbItem = parseFloat(length);
+        const lineWidth = numbItem * 36;
+        line.style.width = `${lineWidth}px`;
+    }
+}

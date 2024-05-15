@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,11 +25,47 @@
     <body>
         <header id="header"></header>
         <script type="module">
+            handleSlideShow();
             load("#header", "./templates/header.html");
         </script>
+        <div class="container">
+            <section class="slideshow">
+                <div class="slideshow__inner">
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-2.png" alt="" />
+                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-3.png" alt="" />
+                </div>
+                <div class="slideshow__pages">
+                    <span class="sildeshow__numb-first">1</span>
+                    <div class="slideshow__line">
+                        <div class="slideshow__move"></div>
+                    </div>
 
+                    <span class="sildeshow__numb-end">5</span>
+                </div>
+                <div class="slideshow__control">
+                    <button class="slideshow__right">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                            />
+                        </svg>
+                    </button>
+                    <button class="slideshow__left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <script src="./assets/JS/script.js"></script>
+        </div>
         <footer id="footer"></footer>
-        <script type="module">
+        <script>
             load("#footer", "./templates/footer.html");
         </script>
     </body>

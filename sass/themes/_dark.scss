@@ -20,14 +20,15 @@ html.dark {
     // dropdown
     --dropdown-text: #fff;
     --dropdown-bg: #3a3e48;
-    --dropdown-filter: brightness(0) saturate(100%) invert(24%) sepia(16%) saturate(420%) hue-rotate(185deg) brightness(90%) contrast(94%);
 
+    --dropdown-filter: brightness(0) saturate(100%) invert(24%) sepia(16%) saturate(420%) hue-rotate(185deg) brightness(90%) contrast(94%);
     --dropdown-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
 
     // top menu
     --dropdown-topmenu-text: #b9babe;
     --dropdown-topmenu-main-border: #171c28;
     --dropdown-topmenu-icon-filter: brightness(0) saturate(100%) invert(96%) sepia(1%) saturate(747%) hue-rotate(202deg) brightness(102%) contrast(96%);
+
     // nav-bars
     --nav-menu-bars-bg-color: #292e39;
     --nav-menu-bars-bg-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
