@@ -36,12 +36,15 @@ function load(selector, path) {
 function isHidden(element) {
     if (!element) return true;
 
-    if (window.getComputedStyle(element).display === "none") return true;
+    if (window.getComputedStyle(element).display === "none") {
+        return true;
+    }
 
     let parent = element.parentElement;
     while (parent) {
-        if (window.getComputedStyle(parent).display === "none") return true;
-
+        if (window.getComputedStyle(parent).display === "none") {
+            return true;
+        }
         parent = parent.parentElement;
     }
 
@@ -108,17 +111,22 @@ function handleActiveMenu() {
     const init = () => {
         menus.forEach((menu) => {
             const items = menu.children;
-
             if (!items.length) return;
 
             removeActive(menu);
-            items[0].classList.add(activeClass);
+            if (window.innerWidth > 991) items[0].classList.add(activeClass);
 
             Array.from(items).forEach((item) => {
                 item.onmouseenter = () => {
                     if (window.innerWidth <= 991) return;
                     removeActive(menu);
                     item.classList.add(activeClass);
+                };
+                item.onclick = () => {
+                    if (window.innerWidth > 991) return;
+                    removeActive(menu);
+                    item.classList.add(activeClass);
+                    item.scrollIntoView();
                 };
             });
         });
@@ -130,3 +138,44 @@ function handleActiveMenu() {
         dropdown.onmouseleave = () => init();
     });
 }
+
+/**
+ * JS toggle
+ *
+ * Cách dùng:
+ * <button class="js-toggle" toggle-target="#box">Click</button>
+ * <div id="box">Content show/hide</div>
+ */
+window.addEventListener("template-loaded", initJsToggle);
+
+function initJsToggle() {
+    $$(".js-toggle").forEach((button) => {
+        const target = button.getAttribute("toggle-target");
+        if (!target) {
+            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+        }
+        button.onclick = () => {
+            if (!$(target)) {
+                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+            }
+            const isHidden = $(target).classList.contains("hide");
+
+            requestAnimationFrame(() => {
+                $(target).classList.toggle("hide", !isHidden);
+                $(target).classList.toggle("show", isHidden);
+            });
+        };
+    });
+}
+
+window.addEventListener("template-loaded", () => {
+    const links = $$(".js-dropdown-list > li > a");
+
+    links.forEach((link) => {
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            const item = link.closest("li");
+            item.classList.toggle("nav__item--active");
+        };
+    });
+});

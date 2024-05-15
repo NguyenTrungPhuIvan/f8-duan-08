@@ -5,6 +5,13 @@
     position: absolute;
     display: none;
     left: 0;
+
+    @include ab.breakpoint(lg) {
+        position: initial;
+        width: 100%;
+        padding-top: 0;
+    }
+
     &__inner {
         --inner-max-height: min(100vh - 158px, 582px);
         --inner-padding: 30px;
@@ -16,6 +23,16 @@
         border-radius: 20px;
         background: var(--dropdown-bg);
         box-shadow: var(--dropdown-shadow);
+
+        @include ab.breakpoint(lg) {
+            border-radius: initial;
+            box-shadow: initial;
+            padding: 0;
+
+            &::after {
+                display: none;
+            }
+        }
         &::after {
             position: absolute;
 
@@ -27,6 +44,16 @@
         }
     }
 }
+.menu-bars {
+    display: none;
+    @include ab.breakpoint(lg) {
+        display: block;
+        margin-right: 20px;
+    }
+    @include ab.breakpoint(md) {
+        margin-right: 0;
+    }
+}
 .top-menu {
     position: relative;
     &__main {
@@ -35,11 +62,22 @@
         height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
 
         border-right: 1px solid var(--dropdown-topmenu-main-border);
+
+        @include ab.breakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border-right: initial;
+        }
     }
 }
 .menu-column {
     display: flex;
     column-gap: 14px;
+
+    @include ab.breakpoint(lg) {
+        background: var(--nav-menu-bars-bg-color);
+    }
+
     &__icon {
         flex-shrink: 0;
         width: 36px;
@@ -56,6 +94,9 @@
         @include ab.breakpoint(xl) {
             display: none;
         }
+        @include ab.breakpoint(lg) {
+            display: block;
+        }
     }
 
     &__content {
@@ -64,6 +105,10 @@
 
     &__title {
         margin-top: 4px;
+        @include ab.breakpoint(lg) {
+            margin-bottom: 14px;
+        }
+
         a {
             color: var(--dropdown-topmenu-text);
             font-size: 1.6rem;
@@ -73,6 +118,10 @@
     }
     &__list {
         margin-top: 12px;
+        @include ab.breakpoint(lg) {
+            background: var(--nav-menu-bars-bg-color);
+            margin-top: 0;
+        }
     }
     &__item--active {
         & > .menu-column__link,
@@ -80,6 +129,7 @@
             color: #0071dc;
             font-weight: 500;
         }
+
         .sub-menu {
             display: grid;
         }
@@ -102,6 +152,13 @@
     display: none;
     grid-template-columns: repeat(3, 1fr);
 
+    @include ab.breakpoint(lg) {
+        background: var(--nav-menu-bars-bg-color);
+        margin-top: 14px;
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
     &__column {
         display: flex;
         flex-flow: column;
@@ -113,6 +170,12 @@
         position: initial;
         inset: initial;
         display: grid;
+        @include ab.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            overflow-y: initial;
+            height: auto;
+        }
+
         .menu-column__link {
             &:hover {
                 color: #0071dc;

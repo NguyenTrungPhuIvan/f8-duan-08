@@ -5,10 +5,7 @@
     // text
     --text-primary-color: #1a162e;
     // filter
-    --filter-icon: (
-        brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7488%)
-            hue-rotate(213deg) brightness(98%) contrast(95%)
-    );
+    --filter-icon: (brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7488%) hue-rotate(213deg) brightness(98%) contrast(95%));
     // header
     --header-bg-color: #eee;
 
@@ -25,15 +22,16 @@
     // dropdown
     --dropdown-text: #1a162e;
     --dropdown-bg: #fff;
-    --dropdown-filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
-        saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
+    --dropdown-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
 
     --dropdown-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
 
     // top-menu
     --dropdown-topmenu-text: #1a162e;
     --dropdown-topmenu-main-border: #d2d1d6;
-    --dropdown-topmenu-icon-filter: brightness(0) saturate(100%) invert(8%)
-        sepia(28%) saturate(1463%) hue-rotate(211deg) brightness(90%)
-        contrast(96%);
+    --dropdown-topmenu-icon-filter: brightness(0) saturate(100%) invert(8%) sepia(28%) saturate(1463%) hue-rotate(211deg) brightness(90%) contrast(96%);
+    // nav-bars
+    --nav-menu-bars-bg-color: #fff;
+    --nav-menu-bars-bg-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
+    --nav-menu-bars-bg-border-bottom: #1a162e;
 }

@@ -2,13 +2,28 @@
 
 .nav {
     margin-left: 139px;
+
     &__list {
         @include ab.flexCenter($j: null);
+        @include ab.breakpoint(lg) {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            flex-flow: column;
+            align-items: flex-start;
+            height: calc(100% - 65px);
+            padding: 20px 40px 40px;
+        }
+        @include ab.breakpoint(md) {
+            padding: 20px;
+            height: calc(100% - 170px);
+        }
+        @include ab.breakpoint(sm) {
+            height: calc(100% - 170px);
+        }
     }
 
     &__item {
         padding: 0 15px;
-
         &:hover .menu-dropdown {
             display: block;
         }
@@ -20,12 +35,120 @@
             font-weight: 500;
             line-height: 1.46;
             height: 50px;
+            @include ab.breakpoint(lg) {
+                position: sticky;
+                top: -22px;
+                background: var(--nav-menu-bars-bg-color);
+                z-index: 5;
+                justify-content: space-between;
+            }
+        }
+        @include ab.breakpoint(lg) {
+            padding: 0;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+
+            &--active {
+                border-bottom: initial;
+            }
+            &:hover .menu-dropdown {
+                display: none;
+            }
+            &--active .menu-dropdown {
+                display: block !important;
+            }
+            .icon {
+                rotate: -90deg;
+                transition: rotate 0.3s;
+            }
+            &--active .icon {
+                rotate: 0deg;
+            }
+            & > a {
+                height: 44px;
+            }
         }
     }
-    @include ab.breakpoint(lg) {
+    &__bars-icon {
         display: none;
+        @include ab.breakpoint(lg) {
+            display: block;
+            padding: 20px 40px 0;
+        }
+        @include ab.breakpoint(md) {
+            padding: 20px 20px;
+        }
     }
     @include ab.breakpoint(xl) {
+        margin-left: 50px;
+    }
+    @include ab.breakpoint(lg) {
+        position: fixed;
+        margin-left: 0;
+        z-index: 9;
+        inset: 0 50% 0 0;
+        margin-left: 0;
+        border-radius: 0px 20px 20px 0px;
+
+        background: var(--nav-menu-bars-bg-color);
+        box-shadow: initial;
+
+        transform: translateX(-101%);
+        transition: transform 0.5s;
+    }
+    @include ab.breakpoint(md) {
+        inset: 0 40% 0 0;
+    }
+    @include ab.breakpoint(sm) {
+        inset: 0 20% 0 0;
+    }
+
+    @include ab.breakpoint(lg) {
+        &.show {
+            transform: translateX(0);
+            box-shadow: var(--nav-menu-bars-bg-shadow);
+        }
+        &.show + .overlay-nav-bars {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.overlay-nav-bars {
+    display: none;
+
+    @include ab.breakpoint(lg) {
+        display: block;
+        background: rgba($color: #171c28, $alpha: 0.4);
+        position: fixed;
+        inset: 0;
+        z-index: 8;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity, visibility;
+        transition-duration: 0.5s;
+    }
+}
+.nav-bars-btn {
+    height: 50px;
+    padding: 0 20px;
+    align-items: center;
+
+    &__title {
         margin-left: 15px;
+        color: var(--dropdown-topmenu-text);
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+    &__qnt {
+        @extend .nav-bars-btn__title;
+        margin-left: auto;
+    }
+    @include ab.breakpoint(sm) {
+        height: 44px;
     }
 }

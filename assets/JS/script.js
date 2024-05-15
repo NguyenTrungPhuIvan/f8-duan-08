@@ -79,7 +79,7 @@ function handleActiveMenu() {
             if (!items.length) return;
 
             resetActive(menu);
-            items[0].classList.add(activeMenu);
+            if (window.innerWidth > 991) items[0].classList.add(activeMenu);
 
             Array.from(items).forEach((item) => {
                 item.onmouseenter = () => {
@@ -87,6 +87,13 @@ function handleActiveMenu() {
 
                     resetActive(menu);
                     item.classList.add(activeMenu);
+                };
+                item.onclick = () => {
+                    if (window.innerWidth > 991) return;
+                    resetActive(menu);
+                    item.classList.add(activeMenu);
+                    //  cuộn đến menu
+                    item.scrollIntoView();
                 };
             });
         });
@@ -100,3 +107,39 @@ function handleActiveMenu() {
         };
     });
 }
+
+window.addEventListener("template-loaded", initJsToggle);
+
+function initJsToggle() {
+    const buttons = $$(".js-toggle");
+
+    buttons.forEach((button) => {
+        const target = button.getAttribute("toggle-target");
+
+        if (!target) {
+            console.error(`target is not valid`);
+        }
+
+        button.onclick = () => {
+            if (!target) return;
+            const isHiddenClass = $(target).classList.contains("hide");
+
+            requestAnimationFrame(() => {
+                $(target).classList.toggle("show", isHiddenClass);
+                $(target).classList.toggle("hide", !isHiddenClass);
+            });
+        };
+    });
+}
+
+window.addEventListener("template-loaded", () => {
+    const links = $$(".js-dropdown-list > li > a");
+
+    links.forEach((link) => {
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            const item = link.closest("li");
+            item.classList.toggle("nav__item--active");
+        };
+    });
+});

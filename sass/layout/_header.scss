@@ -12,8 +12,9 @@
         @include ab.breakpoint(md) {
             justify-content: space-evenly;
         }
-        .menu-bars {
-            display: none;
+    }
+    .menu-bars {
+        &__icon {
             margin-right: 30px;
             @include ab.breakpoint(lg) {
                 display: block;
@@ -24,6 +25,15 @@
             @include ab.breakpoint(md) {
                 margin-right: 0;
             }
+        }
+
+        &__bg {
+            background: var(--menu-bars-bg-color);
+            box-shadow: var(--menu-bars-bg-shadow);
+
+            inset: 0 50% 0 0;
+            position: fixed;
+            z-index: 9;
         }
     }
 
@@ -54,10 +64,6 @@
             &--single {
                 padding: 13px 13px;
             }
-
-            @include ab.breakpoint(md) {
-                display: none;
-            }
         }
         .action {
             @include ab.flexCenter();
@@ -74,9 +80,7 @@
             width: 50px;
             height: 50px;
             border-radius: 8px;
-            background: url(<path-to-image>) lightgray -205.145px -22.64px /
-                    819.939% 546.626% no-repeat,
-                #dfd2fa;
+            background: url(<path-to-image>) lightgray -205.145px -22.64px / 819.939% 546.626% no-repeat, #dfd2fa;
             box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
             cursor: pointer;
 
