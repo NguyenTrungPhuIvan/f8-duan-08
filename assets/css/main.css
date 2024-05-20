@@ -411,7 +411,7 @@ a {
 
 @media (max-width: 1399.98px) {
   .container {
-    max-width: 1140px;
+    max-width: 1170px;
   }
   .row-cols-xxl-1 > * {
     flex: 0 0 auto;
@@ -1304,6 +1304,7 @@ html.dark {
   --body-bg: #292e39;
   --text-primary-color: #fff;
   --filter-icon: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%);
+  --header-logo-color: #fff;
   --header-bg-color: #171c28;
   --header-action-gr-bg: #292e39;
   --header-action-gr-separate-color: #ededf6;
@@ -1318,6 +1319,11 @@ html.dark {
   --nav-menu-bars-bg-color: #292e39;
   --nav-menu-bars-bg-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
   --nav-menu-bars-bg-border-bottom: #b9babe;
+  --home-title-h2-color: #ffffff;
+  --home-categories-bg-item: #171c28;
+  --home-categories-bg-img: #292e39;
+  --home-categories-bg-price: #ffffff;
+  --home-categories-bg-desc: #ffffff;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1329,11 +1335,17 @@ html.dark {
     --header-shadow: 0px 20px 60px 10px rgba(0, 0, 0, 0.2);
   }
 }
+@media (max-width: 991.98px) {
+  html.dark {
+    --home-categories-bg-item: #171c28;
+  }
+}
 
 :root {
   --body-bg: #f6f6f6;
   --text-primary-color: #1a162e;
   --filter-icon: (brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7488%) hue-rotate(213deg) brightness(98%) contrast(95%));
+  --header-logo-color: #1a162e;
   --header-bg-color: #eee;
   --header-action-gr-bg: #fff;
   --header-action-gr-separate-color: #ededf6;
@@ -1348,12 +1360,22 @@ html.dark {
   --nav-menu-bars-bg-color: #fff;
   --nav-menu-bars-bg-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
   --nav-menu-bars-bg-border-bottom: #1a162e;
+  --home-title-h2-color: #1a162e;
+  --home-categories-bg-item: #eee;
+  --home-categories-bg-img: #fff;
+  --home-categories-bg-price: #1a162e;
+  --home-categories-bg-desc: #1a162e;
 }
 @media (max-width: 991.98px) {
   :root {
     --header-bg-color: #fff;
     --header-action-gr-bg: #eee;
     --header-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  }
+}
+@media (max-width: 767.98px) {
+  :root {
+    --home-categories-bg-item: #ffffff;
   }
 }
 
@@ -1363,7 +1385,7 @@ html.dark {
   column-gap: 14px;
 }
 .logo span {
-  color: var(--text-primary-color);
+  color: var(--header-logo-color);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.45;
@@ -1960,6 +1982,113 @@ html.dark {
 .header__action .avatar img {
   display: block;
   width: 100%;
+}
+
+.categories__row {
+  --grid-gutter-x: 51px;
+}
+@media (max-width: 1399.98px) {
+  .categories__row {
+    --grid-gutter-x: 30px;
+  }
+}
+@media (max-width: 991.98px) {
+  .categories__row {
+    --grid-gutter-y: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .categories__row {
+    --grid-gutter-y: 24px;
+  }
+}
+.categories__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  border-radius: 16px;
+  padding: 20px 26px 20px 20px;
+  background: var(--home-categories-bg-item);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.categories__item:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transform: translateY(-5px);
+}
+@media (max-width: 1199.98px) {
+  .categories__item {
+    flex-direction: column;
+  }
+}
+@media (max-width: 991.98px) {
+  .categories__item {
+    flex-direction: row;
+  }
+}
+.categories__item-img {
+  background: var(--home-categories-bg-img);
+  width: 116px;
+  height: 116px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+@media (max-width: 1199.98px) {
+  .categories__item-img {
+    width: 100%;
+    height: 150px;
+  }
+}
+@media (max-width: 991.98px) {
+  .categories__item-img {
+    width: 88px;
+    height: 88px;
+  }
+}
+.categories__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.categories__item-price {
+  color: var(--home-categories-bg-price);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 145.455%;
+}
+@media (max-width: 767.98px) {
+  .categories__item-price {
+    font-size: 1.8rem;
+  }
+}
+.categories__item-desc {
+  color: var(--home-categories-bg-desc);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+@media (max-width: 767.98px) {
+  .categories__item-desc {
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
+
+.home__container {
+  margin-top: 40px;
+}
+.home__title-2 {
+  margin-bottom: 21px;
+  color: var(--home-title-h2-color);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 141.667%;
+}
+@media (max-width: 767.98px) {
+  .home__title-2 {
+    font-size: 2.2rem;
+    line-height: 145.455%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

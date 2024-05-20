@@ -7,6 +7,9 @@
     // filter
     --filter-icon: (brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7488%) hue-rotate(213deg) brightness(98%) contrast(95%));
     // header
+
+    --header-logo-color: #1a162e;
+
     --header-bg-color: #eee;
 
     --header-action-gr-bg: #fff;
@@ -34,4 +37,17 @@
     --nav-menu-bars-bg-color: #fff;
     --nav-menu-bars-bg-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
     --nav-menu-bars-bg-border-bottom: #1a162e;
+
+    // home
+    --home-title-h2-color: #1a162e;
+
+    // Home - categories
+    --home-categories-bg-item: #eee;
+    --home-categories-bg-img: #fff;
+    --home-categories-bg-price: #1a162e;
+    --home-categories-bg-desc: #1a162e;
+
+    @include ab.breakpoint(md) {
+        --home-categories-bg-item: #ffffff;
+    }
 }

@@ -1,0 +1,80 @@
+@use "../abstract" as ab;
+
+.categories {
+    &__row {
+        --grid-gutter-x: 51px;
+        @include ab.breakpoint(xxl) {
+            --grid-gutter-x: 30px;
+        }
+        @include ab.breakpoint(lg) {
+            --grid-gutter-y: 30px;
+        }
+        @include ab.breakpoint(md) {
+            --grid-gutter-y: 24px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+        border-radius: 16px;
+        padding: 20px 26px 20px 20px;
+        background: var(--home-categories-bg-item);
+        transition: box-shadow 0.3s, transform 0.3s;
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            transform: translateY(-5px);
+        }
+        @include ab.breakpoint(xl) {
+            flex-direction: column;
+        }
+        @include ab.breakpoint(lg) {
+            flex-direction: row;
+        }
+
+        &-img {
+            background: var(--home-categories-bg-img);
+            width: 116px;
+            height: 116px;
+            flex-shrink: 0;
+            object-fit: contain;
+            @include ab.breakpoint(xl) {
+                width: 100%;
+                height: 150px;
+            }
+            @include ab.breakpoint(lg) {
+                width: 88px;
+                height: 88px;
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        &-price {
+            color: var(--home-categories-bg-price);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 145.455%;
+            @include ab.breakpoint(md) {
+                font-size: 1.8rem;
+            }
+        }
+        &-desc {
+            color: var(--home-categories-bg-desc);
+
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 150%;
+            @include ab.breakpoint(md) {
+                font-size: 1.4rem;
+                line-height: 142.857%;
+            }
+        }
+    }
+}
