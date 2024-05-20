@@ -29,13 +29,46 @@
             load("#header", "./templates/header.html");
         </script>
         <div class="container">
-            <section class="slideshow">
-                <div class="slideshow__inner">
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
-                    <img class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+            <section class="slideshow__wrap">
+                <div class="slideshow">
+                    <div class="slideshow__inner">
+                        <div class="slideshow__item slideshow__item--start">
+                            <a class="slideshow__link-img" draggable="false" href="#!">
+                                <picture>
+                                    <source media="(max-width: 767.98px)" srcset="./assets/img/slideshow/slide-img-mobile.svg" />
+                                    <img draggable="false" class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/item-1.svg" alt="" />
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="slideshow__item">
+                            <a class="slideshow__link-img" draggable="false" href="#!"
+                                ><picture>
+                                    <source media="(max-width: 767.98px)" src="" />
+                                    <img draggable="false" class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-02.jpg" alt="" /></picture
+                            ></a>
+                        </div>
+                        <div class="slideshow__item">
+                            <a class="slideshow__link-img" draggable="false" href="#!"
+                                ><picture>
+                                    <source media="(max-width: 767.98px)" src="" />
+                                    <img draggable="false" class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-03.jpg" alt="" /></picture
+                            ></a>
+                        </div>
+                        <div class="slideshow__item">
+                            <a class="slideshow__link-img" draggable="false" href="#!"
+                                ><picture>
+                                    <source media="(max-width: 767.98px)" src="" />
+                                    <img draggable="false" class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-04.jpg" alt="" /></picture
+                            ></a>
+                        </div>
+                        <div class="slideshow__item">
+                            <a class="slideshow__link-img" draggable="false" href="#!"
+                                ><picture>
+                                    <source media="(max-width: 767.98px)" src="" />
+                                    <img draggable="false" class="slideshow__img js-slideShow-img" src="./assets/img/slideshow/img-05.jpg" alt="" /></picture
+                            ></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="slideshow__pages">
                     <span class="sildeshow__numb-first">1</span>
@@ -46,7 +79,7 @@
                     <span class="sildeshow__numb-end">5</span>
                 </div>
                 <div class="slideshow__control">
-                    <button class="slideshow__right">
+                    <button class="slideshow__right slideshow__btn" id="slideshow__right">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                             <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <path
@@ -54,7 +87,7 @@
                             />
                         </svg>
                     </button>
-                    <button class="slideshow__left">
+                    <button class="slideshow__left slideshow__btn" id="slideshow__left">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                             <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <path

@@ -1,22 +1,50 @@
+@use "../abstract" as ab;
+
+.slideshow__wrap {
+    position: relative;
+}
+
 .slideshow {
     margin-top: 40px;
     position: relative;
-    overflow: hidden;
+    border-radius: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &.dragging &__item {
+        user-select: none;
+        -webkit-user-drag: none;
+        cursor: grab;
+    }
 
     &__inner {
+        // position: absolute;
         display: flex;
         align-items: center;
-        width: 100%;
-        height: 445px;
-        border-radius: 20px;
+
         background: #b9babe;
         transition: 0.4s;
     }
-    &__img {
-        width: inherit;
-        height: inherit;
 
+    &__item {
+        scroll-snap-align: start;
+        position: relative;
         flex-shrink: 0;
+        width: 100%;
+        padding-top: 34%;
+        @include ab.breakpoint(md) {
+            padding-top: 50%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     &__pages {
@@ -24,8 +52,8 @@
         column-gap: 20px;
         align-items: center;
         position: absolute;
-        bottom: 66px;
-        left: 70px;
+        bottom: 15%;
+        left: 5.2%;
         display: flex;
         color: #fff;
         font-size: 1.8rem;
@@ -84,8 +112,13 @@
         border-radius: 50%;
         width: 50px;
         height: 50px;
-        box-shadow: brightness(0) saturate(100%) invert(8%) sepia(28%) saturate(1463%) hue-rotate(211deg) brightness(90%) contrast(96%);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
         background: rgba($color: #fff, $alpha: 0.5);
+
+        @include ab.breakpoint(md) {
+            width: 40px;
+            height: 40px;
+        }
         &:hover {
             cursor: pointer;
         }

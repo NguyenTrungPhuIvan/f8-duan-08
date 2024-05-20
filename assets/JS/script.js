@@ -145,82 +145,188 @@ window.addEventListener("template-loaded", () => {
 });
 function handleSlideShow() {
     const imgs = $$(".js-slideShow-img");
-    const slide = $(".slideshow__inner");
-    const btnLeft = $(".slideshow__left");
-    const btnRight = $(".slideshow__right");
+
+    const slider = $(".slideshow");
+
+    const btns = $$(".slideshow__btn");
+
     const line = $(".slideshow__line");
     const moveCircle = $(".slideshow__move");
     let lineWidth = 0;
 
     let step = 0;
 
-    let curr = 0;
     let intervalFunc = setInterval(() => {
-        handleChangeIMG();
+        // autoPlaySider();
     }, 3000);
-    setLineWidth();
-    function handleChangeIMG() {
-        if (curr == imgs.length - 1) {
-            curr = 0;
-            let width = imgs[0].offsetWidth;
-            slide.style.transform = `translateX(${width * curr * -1}px)`;
-            resetInterval();
-            getSteps();
+
+    const autoPlaySider = () => {
+        if (slider.scrollLeft === slider.scrollWidth - slider.offsetWidth) {
+            slider.scrollLeft = 0;
         } else {
-            curr++;
-            let width = imgs[0].offsetWidth;
-            slide.style.transform = `translateX(${width * curr * -1}px)`;
-            resetInterval();
-            getSteps();
+            slider.scrollLeft += slider.offsetWidth;
         }
-    }
-    btnRight.onclick = handleChangeIMG;
-    btnLeft.onclick = () => {
-        if (curr == 0) {
-            curr = imgs.length - 1;
-            let width = imgs[0].offsetWidth;
-            slide.style.transform = `translateX(${width * curr * -1}px)`;
-            resetInterval();
-            getStepsReverse();
-        } else {
-            curr--;
-            let width = imgs[0].offsetWidth;
-            slide.style.transform = `translateX(${width * curr * -1}px)`;
-            resetInterval();
-            getStepsReverse();
-        }
+        getSteps();
+        resetInterval();
     };
 
+    setLineWidth();
+    // hoverIMGStop();
+
+    dragSlideShow();
+    function dragSlideShow() {
+        let width = imgs[0].offsetWidth;
+        let isGetSteps = false;
+
+        let isDragging = false,
+            startX,
+            startScrollLeft;
+
+        const dragging = (e) => {
+            if (!isDragging) return;
+            if (slider.scrollLeft === slider.scrollWidth - slider.offsetWidth) {
+                if (-(e.pageX - startX) * 2 > 0) {
+                    slider.scrollLeft = 0;
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getSteps();
+                        isGetSteps = true;
+                    }
+                } else {
+                    slider.scrollLeft = startScrollLeft - (e.pageX - startX) * 2;
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getStepsReverse();
+                        isGetSteps = true;
+                    }
+                }
+            } else if (slider.scrollLeft === 0) {
+                if (-(e.pageX - startX) * 2 < 0) {
+                    slider.scrollLeft = slider.scrollWidth - slider.offsetWidth;
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getStepsReverse();
+                        isGetSteps = true;
+                    }
+                } else {
+                    slider.scrollLeft = startScrollLeft - (e.pageX - startX) * 2;
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getSteps();
+                        isGetSteps = true;
+                    }
+                }
+            } else {
+                slider.scrollLeft = startScrollLeft - (e.pageX - startX) * 2;
+                if (-(e.pageX - startX) * 2 > 0) {
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getSteps();
+                        isGetSteps = true;
+                    }
+                } else {
+                    if (!isGetSteps && Math.abs((e.pageX - startX) * 2) > slider.offsetWidth / 2) {
+                        getStepsReverse();
+                        isGetSteps = true;
+                    }
+                }
+            }
+        };
+
+        function startDragging(e) {
+            isDragging = true;
+            slider.classList.add("dragging");
+            startX = e.pageX;
+            startScrollLeft = slider.scrollLeft;
+
+            clearInterval(intervalFunc);
+        }
+        function stopDragging(e) {
+            isDragging = false;
+            slider.classList.remove("dragging");
+
+            isGetSteps = false;
+
+            // intervalFunc = setInterval(() => {
+            //     autoPlaySider();
+            // }, 3000);
+        }
+
+        slider.addEventListener("mousemove", dragging);
+        slider.addEventListener("mousedown", startDragging);
+
+        window.addEventListener("mouseup", stopDragging);
+
+        btns.forEach((btn) => {
+            btn.onclick = (e) => {
+                const width = imgs[0].offsetWidth;
+                if (slider.scrollLeft === 0 && btn.id === "slideshow__left") {
+                    slider.scrollLeft = slider.scrollWidth - slider.offsetWidth;
+                    resetInterval();
+                    getStepsReverse();
+                } else if (slider.scrollLeft === slider.scrollWidth - slider.offsetWidth && btn.id === "slideshow__right") {
+                    slider.scrollLeft = 0;
+                    resetInterval();
+                    getSteps();
+                } else {
+                    slider.scrollLeft += btn.id === "slideshow__left" ? -width : width;
+                    btn.id === "slideshow__left" ? getStepsReverse() : getSteps();
+                    resetInterval();
+                }
+            };
+        });
+    }
+    function hoverIMGStop() {
+        slider.addEventListener("mouseenter", () => {
+            clearInterval(intervalFunc);
+        });
+        slider.addEventListener("mouseleave", () => {
+            // intervalFunc = setInterval(() => {
+            //     autoPlaySider();
+            // }, 3000);
+        });
+        resetInterval();
+    }
     function resetInterval() {
         clearInterval(intervalFunc);
         intervalFunc = setInterval(() => {
-            handleChangeIMG();
+            autoPlaySider();
         }, 3000);
     }
 
     function setLineWidth() {
+        let spaceItem;
+        if (window.innerWidth < 991 && window.innerWidth > 768) {
+            spaceItem = 24;
+        } else if (window.innerWidth < 768) {
+            spaceItem = 14;
+        } else {
+            spaceItem = 34;
+        }
         const numbEnd = $(".sildeshow__numb-end");
         numbEnd.innerText = `${imgs.length}`;
         line.style.width = `${lineWidth}px`;
         let numbItem = parseFloat(imgs.length);
-        lineWidth = numbItem * 34;
+        lineWidth = numbItem * spaceItem;
         line.style.width = `${lineWidth}px`;
-
-        step = (lineWidth + 14) / (imgs.length - 1);
+        step = (lineWidth + moveCircle.offsetWidth) / (imgs.length - 1);
     }
+
     function getSteps() {
         if (moveCircle.offsetLeft >= line.offsetWidth) {
-            moveCircle.style.left = `-14px`;
+            setTimeout(() => {
+                moveCircle.style.left = `${moveCircle.offsetWidth * -1}px`;
+            }, 300);
         } else {
-            moveCircle.style.left = `${moveCircle.offsetLeft + step}px`;
+            setTimeout(() => {
+                moveCircle.style.left = `${moveCircle.offsetLeft + step}px`;
+            }, 300);
         }
     }
     function getStepsReverse() {
         if (moveCircle.offsetLeft <= -14) {
-            moveCircle.style.left = `${line.offsetWidth}px`;
-            console.log(line.offsetWidth);
+            setTimeout(() => {
+                moveCircle.style.left = `${line.offsetWidth}px`;
+            }, 300);
         } else {
-            moveCircle.style.left = `${moveCircle.offsetLeft - step}px`;
+            setTimeout(() => {
+                moveCircle.style.left = `${moveCircle.offsetLeft - step}px`;
+            }, 300);
         }
     }
 }
