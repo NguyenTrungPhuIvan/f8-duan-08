@@ -1,8 +1,8 @@
 @use "../abstract" as ab;
 .heart {
     position: absolute;
-    right: 16px;
-    top: 250px;
+    right: 0;
+    bottom: 0;
     &:hover {
         user-select: none;
         cursor: pointer;

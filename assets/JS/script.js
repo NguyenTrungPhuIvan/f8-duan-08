@@ -343,10 +343,12 @@ function handleClickHeart() {
             const activeHeart = $(`.heart.heart-circle.active-${index}`);
             if (activeHeart) {
                 hearts[index].src = "./assets/icon/red-heart.svg";
-                hearts[index].style.transform = "translateY(3px)";
+                hearts[index].style.filter = "none";
+                hearts[index].style.transform = "translateY(4px)";
             } else {
-                hearts[index].src = "./assets/icon/act-heart.svg";
-                hearts[index].style.transform = "translateY(0)";
+                hearts[index].src = "./assets/icon/heart-line.svg";
+                hearts[index].style.filter = "var(--filter-icon)";
+                hearts[index].style.transform = "translateY(0px)";
             }
         };
     });

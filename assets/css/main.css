@@ -151,6 +151,7 @@ body {
 
 a,
 img select,
+div,
 button,
 textarea,
 input {
@@ -1334,7 +1335,7 @@ html.dark {
   --filter-title--bg-color: #171c28;
   --filter-title-icon-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(359deg) brightness(101%) contrast(102%);
   --heart-bg: #292e39;
-  --heart-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(322deg) brightness(102%) contrast(101%);
+  --heart-filter: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(1187%) hue-rotate(149deg) brightness(114%) contrast(102%);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1385,6 +1386,7 @@ html.dark {
   --filter-title--bg-color: #fff;
   --filter-title-icon-filter: brightness(0) saturate(100%) invert(39%) sepia(2%) saturate(1112%) hue-rotate(203deg) brightness(104%) contrast(82%);
   --heart-bg: #fff;
+  --heart-filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(1618%) hue-rotate(213deg) brightness(94%) contrast(95%);
 }
 @media (max-width: 991.98px) {
   :root {
@@ -1988,9 +1990,16 @@ html.dark {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transform: translateY(-5px);
 }
+.product-item-2__img-wrapper {
+  position: relative;
+  padding-top: 100%;
+}
 .product-item-2__img {
-  width: 280px;
-  height: 284px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .product-item-2__title, .product-item-2__price, .product-item-2__rate {
@@ -2027,6 +2036,7 @@ html.dark {
   align-items: center;
   column-gap: 14px;
   padding: 6px 12px;
+  height: 36px;
   border-radius: 6px;
   background: var(--filter-title--bg-color);
   transition: opacity 0.3s;
@@ -2047,8 +2057,8 @@ html.dark {
 
 .heart {
   position: absolute;
-  right: 16px;
-  top: 250px;
+  right: 0;
+  bottom: 0;
 }
 .heart:hover {
   user-select: none;
@@ -2171,6 +2181,9 @@ html.dark {
   width: 100%;
 }
 
+.categories__title {
+  margin-bottom: 21px;
+}
 .categories__row {
   --grid-gutter-x: 51px;
 }
@@ -2191,6 +2204,7 @@ html.dark {
 }
 
 .products__row-title {
+  margin-bottom: 21px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2200,7 +2214,6 @@ html.dark {
   margin-top: 40px;
 }
 .home__title-2 {
-  margin-bottom: 21px;
   color: var(--home-title-h2-color);
   font-size: 2.4rem;
   font-weight: 700;
