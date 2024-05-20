@@ -181,6 +181,19 @@ a {
   filter: var(--filter-icon);
 }
 
+@media (max-width: 575.98px) {
+  .container {
+    --grid-gutter-x: 40px !important;
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line-clamp-numb, 3);
+  overflow: hidden;
+}
+
 .row > *, .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
   padding-right: calc(var(--grid-gutter-x) * 0.5);

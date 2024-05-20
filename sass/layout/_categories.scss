@@ -1,10 +1,8 @@
 @use "../abstract" as ab;
 
 .categories {
-    &__title {
-        margin-bottom: 21px;
-    }
     &__row {
+        margin-top: 0px;
         --grid-gutter-x: 51px;
         @include ab.breakpoint(xxl) {
             --grid-gutter-x: 30px;
@@ -14,6 +12,9 @@
         }
         @include ab.breakpoint(md) {
             --grid-gutter-y: 24px;
+        }
+        @include ab.breakpoint(sm) {
+            --grid-gutter-y: 20px;
         }
     }
 }

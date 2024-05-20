@@ -45,3 +45,16 @@ a {
     // filter:var(--filter-icon);
     filter: var(--filter-icon);
 }
+
+.container {
+    @include ab.breakpoint(sm) {
+        --grid-gutter-x: 40px !important;
+    }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--line-clamp-numb, 3);
+    overflow: hidden;
+}

@@ -12,6 +12,10 @@
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         transform: translateY(-5px);
+        @include ab.breakpoint(lg) {
+            box-shadow: none;
+            transform: none;
+        }
     }
     @include ab.breakpoint(xl) {
         flex-direction: column;
@@ -69,14 +73,17 @@
     border-radius: 20px;
     padding: 16px;
     height: 100%;
-    box-shadow: var(--product-shadow);
     transition: box-shadow 0.3s, transform 0.3s;
 
     &:hover {
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        box-shadow: var(--product-shadow);
+
         transform: translateY(-5px);
     }
-
+    @include ab.breakpoint(lg) {
+        box-shadow: none;
+        transform: none;
+    }
     &__img-wrapper {
         position: relative;
         padding-top: 100%;
@@ -103,11 +110,11 @@
     &__title,
     &__branch,
     &__row {
-        display: block;
         margin-top: 16px;
     }
 
     &__branch {
+        display: block;
         color: #9e9da8;
         font-size: 1.5rem;
         line-height: 146.667%;
