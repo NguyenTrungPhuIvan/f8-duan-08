@@ -6,7 +6,7 @@
     height: 100%;
     border-radius: 16px;
     padding: 20px 26px 20px 20px;
-    background: var(--home-categories-bg-item);
+    background: var(--categories-bg-item);
     transition: box-shadow 0.3s, transform 0.3s;
 
     &:hover {
@@ -17,11 +17,12 @@
         flex-direction: column;
     }
     @include ab.breakpoint(lg) {
+        border-radius: 10px;
         flex-direction: row;
     }
 
     &__img {
-        background: var(--home-categories-bg-img);
+        background: var(--categories-bg-img);
         width: 116px;
         height: 116px;
         flex-shrink: 0;
@@ -42,7 +43,7 @@
         gap: 6px;
     }
     &__price {
-        color: var(--home-categories-bg-price);
+        color: var(--categories-bg-price);
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 145.455%;
@@ -51,7 +52,7 @@
         }
     }
     &__desc {
-        color: var(--home-categories-bg-desc);
+        color: var(--categories-bg-desc);
 
         font-size: 1.6rem;
         font-weight: 400;
@@ -60,5 +61,61 @@
             font-size: 1.4rem;
             line-height: 142.857%;
         }
+    }
+}
+.product-item-2 {
+    position: relative;
+    background: var(--product-bg-item);
+    border-radius: 20px;
+    padding: 16px;
+    height: 100%;
+    box-shadow: var(--product-shadow);
+    transition: box-shadow 0.3s, transform 0.3s;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        transform: translateY(-5px);
+    }
+    &__img {
+        width: 280px;
+        height: 284px;
+        object-fit: contain;
+    }
+
+    &__title,
+    &__price,
+    &__rate {
+        color: var(--product-bg-title);
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__title,
+    &__branch,
+    &__row {
+        display: block;
+        margin-top: 16px;
+    }
+
+    &__branch {
+        color: #9e9da8;
+        font-size: 1.5rem;
+        line-height: 146.667%;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > * {
+            object-fit: contain;
+        }
+    }
+
+    &__rate-product {
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
     }
 }

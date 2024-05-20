@@ -42,12 +42,27 @@
     --home-title-h2-color: #1a162e;
 
     // Home - categories
-    --home-categories-bg-item: #eee;
-    --home-categories-bg-img: #fff;
-    --home-categories-bg-price: #1a162e;
-    --home-categories-bg-desc: #1a162e;
+    --categories-bg-item: #eee;
+    --categories-bg-img: #fff;
+    --categories-bg-price: #1a162e;
+    --categories-bg-desc: #1a162e;
 
     @include ab.breakpoint(md) {
-        --home-categories-bg-item: #ffffff;
+        --categories-bg-item: #ffffff;
     }
+
+    // products
+    --product-bg-item: #fff;
+    --product-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+    --product-bg-title: #1a162e;
+    --product-bg-price: #1a162e;
+    --product-bg-rate: #1a162e;
+
+    // filter
+    --filter-title-color: #6c6c72;
+    --filter-title--bg-color: #fff;
+    --filter-title-icon-filter: brightness(0) saturate(100%) invert(39%) sepia(2%) saturate(1112%) hue-rotate(203deg) brightness(104%) contrast(82%);
+
+    // heart
+    --heart-bg: #fff;
 }

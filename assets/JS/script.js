@@ -330,3 +330,24 @@ function handleSlideShow() {
         }
     }
 }
+
+window.addEventListener("template-loaded", handleClickHeart);
+
+function handleClickHeart() {
+    const heartWrap = $$(".heart-circle");
+    const hearts = $$(".heart-circle .icon");
+
+    heartWrap.forEach((heart, index) => {
+        heart.onclick = () => {
+            heart.classList.toggle(`active-${index}`);
+            const activeHeart = $(`.heart.heart-circle.active-${index}`);
+            if (activeHeart) {
+                hearts[index].src = "./assets/icon/red-heart.svg";
+                hearts[index].style.transform = "translateY(3px)";
+            } else {
+                hearts[index].src = "./assets/icon/act-heart.svg";
+                hearts[index].style.transform = "translateY(0)";
+            }
+        };
+    });
+}
