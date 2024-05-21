@@ -155,6 +155,7 @@ div,
 button,
 textarea,
 input {
+  outline: none;
   font-size: inherit;
   font-family: inherit;
   color: inherit;
@@ -1349,6 +1350,14 @@ html.dark {
   --filter-title-icon-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(359deg) brightness(101%) contrast(102%);
   --heart-bg: #292e39;
   --heart-filter: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(1187%) hue-rotate(149deg) brightness(114%) contrast(102%);
+  --filter-form-bg: #292e39;
+  --filter-form-separate: #eeeeee;
+  --filter-form-text-color: #eee;
+  --filter-form-bg-block: #171c28;
+  --filter-form-text-range: #fff;
+  --filter-form-text-size: #fff;
+  --filter-form-bg-search: #292e39;
+  --filter-form-line: #fff;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1400,6 +1409,14 @@ html.dark {
   --filter-title-icon-filter: brightness(0) saturate(100%) invert(39%) sepia(2%) saturate(1112%) hue-rotate(203deg) brightness(104%) contrast(82%);
   --heart-bg: #fff;
   --heart-filter: brightness(0) saturate(100%) invert(8%) sepia(29%) saturate(1618%) hue-rotate(213deg) brightness(94%) contrast(95%);
+  --filter-form-bg: #fff;
+  --filter-form-separate: #eeeeee;
+  --filter-form-text-color: #1a162e;
+  --filter-form-bg-block: #f8f8fb;
+  --filter-form-text-range: #1a162e;
+  --filter-form-text-size: #1a162e;
+  --filter-form-bg-search: #fff;
+  --filter-form-line: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   :root {
@@ -2056,6 +2073,12 @@ html.dark {
 }
 
 .filter {
+  position: relative;
+  text-align: left;
+  user-select: none;
+}
+.filter__wapper {
+  position: relative;
   display: flex;
   align-items: center;
   column-gap: 14px;
@@ -2065,7 +2088,7 @@ html.dark {
   background: var(--filter-title--bg-color);
   transition: opacity 0.3s;
 }
-.filter:hover {
+.filter__wapper:hover {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -2075,8 +2098,219 @@ html.dark {
   font-weight: 700;
   line-height: 142.857%;
 }
+.filter__title--small {
+  color: var(--filter-form-text-color);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 145.455%;
+}
+.filter__title--tiny {
+  color: var(--filter-form-text-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
 .filter__icon {
   filter: var(--filter-title-icon-filter);
+}
+.filter__form {
+  position: absolute;
+  padding-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-25px);
+  transition: visibility 0.3s, transform 0.3s, opacity 0.3s;
+  top: 36px;
+  right: 0;
+  z-index: 5;
+}
+.filter.active .filter__form {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+.filter__form-wapper {
+  position: relative;
+  width: 1060px;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--filter-form-bg);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.filter__form-wapper::after {
+  position: absolute;
+  top: -5px;
+  right: 4%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  rotate: 45deg;
+  border: 20px solid var(--filter-form-bg);
+}
+.filter__row {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  height: 100%;
+}
+.filter__form-price, .filter__form-branch, .filter__form-size {
+  display: flex;
+  gap: 20px;
+  flex-flow: column;
+}
+.filter__range {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #d2d1d6;
+}
+.filter__range-ball {
+  top: -50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 6px solid #ffb700;
+}
+.filter__range-ball:hover {
+  cursor: grab;
+}
+.filter__range-ball-1 {
+  left: 18px;
+}
+.filter__range-ball-2 {
+  left: 160px;
+}
+.filter__numb-range {
+  display: flex;
+  column-gap: 30px;
+}
+.filter__numb-Item {
+  display: flex;
+  flex-flow: column;
+  row-gap: 10px;
+}
+.filter__numb-Item input {
+  color: var(--filter-form-text-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  width: 121px;
+  height: 36px;
+  border: 1px solid var(--filter-form-line);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+  background: var(--filter-form-bg-search);
+}
+.filter__weight-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 272px;
+  height: 45px;
+  padding: 5px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--filter-form-line);
+}
+.filter__weight, .filter__weight-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--filter-form-text-size);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+.filter__weight:hover, .filter__weight-type:hover {
+  cursor: pointer;
+}
+.filter__weight {
+  gap: 67px;
+  flex: 2;
+}
+.filter__weight-type {
+  flex: 1;
+  gap: 17px;
+}
+.filter__form-branch {
+  flex: 1;
+}
+.filter__search {
+  position: relative;
+}
+.filter__search input {
+  color: #9e9da8;
+  font-size: 1.5rem;
+  line-height: 146.667%;
+  width: 100%;
+  border: 1px solid var(--filter-form-line);
+  background: var(--filter-form-bg-search);
+  border-radius: 6px;
+  padding: 10px 45px 10px 16px;
+}
+.filter__search img {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.filter__search img:hover {
+  cursor: pointer;
+}
+.filter__form-blocks {
+  display: flex;
+  gap: 20px;
+}
+.filter__form-block {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #9e9da8;
+  background: var(--filter-form-bg-block);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+}
+.filter__form-block:hover {
+  cursor: pointer;
+  color: var(--filter-form-text-color);
+}
+.filter__separate {
+  width: 1px;
+  align-self: stretch;
+  background: var(--filter-form-separate);
+}
+.filter__control {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 20px;
+  align-items: center;
+}
+.filter__cancer {
+  color: #9e9da8;
+  font-size: 1.5rem;
+  line-height: 146.667%;
+}
+.filter__cancer:hover {
+  opacity: 0.7;
+}
+.filter__show {
+  padding: 9px 10px;
+  background: #ffb700;
+  border-radius: 6px;
+  color: #1a162e;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 142.857%;
+  transition: background-color 0.3s;
+}
+.filter__show:hover {
+  opacity: 0.7;
 }
 
 .heart {

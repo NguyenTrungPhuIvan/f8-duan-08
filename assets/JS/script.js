@@ -353,3 +353,16 @@ function handleClickHeart() {
         };
     });
 }
+
+window.addEventListener("template-loaded", addClickFilter);
+
+function addClickFilter() {
+    const filters = $$(".filter__wapper");
+    const filterWapper = $$(".filter");
+    filters.forEach((filter, index) => {
+        filter.onclick = () => {
+            filterWapper[index].classList.toggle("active");
+            console.log(123);
+        };
+    });
+}

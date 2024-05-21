@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -170,10 +170,74 @@
                     <div class="products__row-title">
                         <h2 class="home__title-2">Total LavAzza 1320</h2>
 
-                        <button class="filter">
-                            <span class="filter__title">Filter</span>
-                            <img class="filter__icon" src="./assets/icon/filter.svg" alt="" />
-                        </button>
+                        <div class="filter">
+                            <div class="filter__wapper">
+                                <span class="filter__title">Filter</span>
+                                <img class="filter__icon" src="./assets/icon/filter.svg" alt="" />
+                            </div>
+                            <div class="filter__form">
+                                <div class="filter__form-wapper">
+                                    <span class="filter__title--small"> Filter </span>
+                                    <div class="filter__row">
+                                        <div class="filter__form-price">
+                                            <span class="filter__title--small">Price</span>
+                                            <div class="filter__range">
+                                                <div class="filter__range-ball filter__range-ball-1"></div>
+                                                <div class="filter__range-ball filter__range-ball-2"></div>
+                                            </div>
+                                            <div class="filter__numb-range">
+                                                <div class="filter__numb-Item">
+                                                    <span class="filter__title--tiny">Minimum</span>
+                                                    <input type="text" value="$30.00" />
+                                                </div>
+                                                <div class="filter__numb-Item">
+                                                    <span class="filter__title--tiny">Maximum</span>
+                                                    <input type="text" value="$100.00" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__separate"></div>
+                                        <div class="filter__form-size">
+                                            <span class="filter__title--small">Size/Weight</span>
+                                            <div class="filter__weight-wrapper">
+                                                <div class="filter__weight">
+                                                    <span>500g</span>
+                                                    <img src="./assets/icon/chevron-filter.svg" alt="" />
+                                                </div>
+                                                <div class="filter__separate"></div>
+                                                <div class="filter__weight-type">
+                                                    <span>Gram</span>
+                                                    <img src="./assets/icon/chevron-filter.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="filter__sizes filter__form-blocks">
+                                                <div class="filter__size filter__form-block">Small</div>
+                                                <div class="filter__size filter__form-block">Medium</div>
+                                                <div class="filter__size filter__form-block">Large</div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__separate"></div>
+
+                                        <div class="filter__form-branch">
+                                            <span class="filter__title--small">Brand</span>
+                                            <div class="filter__search">
+                                                <input type="search" placeholder="Search brand name" /> <img src="assets/icon/search-filter.svg" alt="" />
+                                            </div>
+
+                                            <div class="filter__branchs filter__form-blocks">
+                                                <div class="filter__branch filter__form-block">Small</div>
+                                                <div class="filter__branch filter__form-block">Medium</div>
+                                                <div class="filter__branch filter__form-block">Large</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter__control">
+                                        <button class="filter__cancer">Cancel</button>
+                                        <button class="filter__show">Show Result</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row row-cols-4 row-cols-lg-2 gy-lg-3 row-cols-md-1 gy-md-3">
