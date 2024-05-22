@@ -2131,7 +2131,7 @@ html.dark {
 }
 .filter__form-wapper {
   position: relative;
-  width: 1060px;
+  width: min(1060px, 100%);
   padding: 30px;
   border-radius: 20px;
   background: var(--filter-form-bg);
@@ -2154,6 +2154,21 @@ html.dark {
   gap: 30px;
   margin-top: 30px;
   height: 100%;
+}
+@media (max-width: 1199.98px) {
+  .filter__row {
+    gap: 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  .filter__row {
+    flex-flow: column;
+  }
+}
+@media (max-width: 767.98px) {
+  .filter__row {
+    margin-top: 20px;
+  }
 }
 .filter__form-price, .filter__form-branch, .filter__form-size {
   display: flex;
@@ -2284,12 +2299,23 @@ html.dark {
   align-self: stretch;
   background: var(--filter-form-separate);
 }
+@media (max-width: 991.98px) {
+  .filter__separate {
+    height: 1px;
+    width: 100%;
+  }
+}
 .filter__control {
   margin-top: 32px;
   display: flex;
   justify-content: flex-end;
   column-gap: 20px;
   align-items: center;
+}
+@media (max-width: 767.98px) {
+  .filter__control {
+    margin-top: 24px;
+  }
 }
 .filter__cancer {
   color: #9e9da8;

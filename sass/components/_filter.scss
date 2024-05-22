@@ -68,7 +68,7 @@
     &__form-wapper {
         position: relative;
 
-        width: 1060px;
+        width: min(1060px, 100%);
         padding: 30px;
         border-radius: 20px;
         background: var(--filter-form-bg);
@@ -93,6 +93,16 @@
 
         margin-top: 30px;
         height: 100%;
+
+        @include ab.breakpoint(xl) {
+            gap: 20px;
+        }
+        @include ab.breakpoint(lg) {
+            flex-flow: column;
+        }
+        @include ab.breakpoint(md) {
+            margin-top: 20px;
+        }
     }
 
     &__form-price,
@@ -238,6 +248,11 @@
         width: 1px;
         align-self: stretch;
         background: var(--filter-form-separate);
+
+        @include ab.breakpoint(lg) {
+            height: 1px;
+            width: 100%;
+        }
     }
 
     &__control {
@@ -246,6 +261,9 @@
         justify-content: flex-end;
         column-gap: 20px;
         align-items: center;
+        @include ab.breakpoint(md) {
+            margin-top: 24px;
+        }
     }
     &__cancer {
         color: #9e9da8;
