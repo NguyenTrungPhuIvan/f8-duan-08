@@ -1358,6 +1358,7 @@ html.dark {
   --filter-form-text-size: #fff;
   --filter-form-bg-search: #292e39;
   --filter-form-line: #fff;
+  --filter-form-shadow-mobile: 0px 40px 90px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1417,6 +1418,7 @@ html.dark {
   --filter-form-text-size: #1a162e;
   --filter-form-bg-search: #fff;
   --filter-form-line: #d2d1d6;
+  --filter-form-shadow-mobile: 0px 40px 90px rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   :root {
@@ -2135,7 +2137,7 @@ html.dark {
   padding: 30px;
   border-radius: 20px;
   background: var(--filter-form-bg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: var(--filter-form-shadow);
 }
 .filter__form-wapper::after {
   position: absolute;
@@ -2303,6 +2305,10 @@ html.dark {
   .filter__separate {
     height: 1px;
     width: 100%;
+  }
+  .filter__separate--size {
+    width: 1px;
+    height: auto;
   }
 }
 .filter__control {
