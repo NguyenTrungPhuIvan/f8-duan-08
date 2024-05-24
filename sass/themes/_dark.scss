@@ -67,6 +67,8 @@ html.dark {
 
     // filter
     --filter-form-bg: #292e39;
+    --filter-form-bg-ball: #292e39;
+
     --filter-form-separate: #eeeeee;
 
     --filter-form-text-color: #eee;
@@ -75,6 +77,9 @@ html.dark {
     --filter-form-text-size: #fff;
     --filter-form-bg-search: #292e39;
     --filter-form-line: #fff;
+    --filter-form-arrow-up: brightness(0) saturate(100%) invert(13%) sepia(9%) saturate(1384%) hue-rotate(183deg) brightness(99%) contrast(88%);
+    --filter-form-shadow: 0px 40px 90px rgba(0, 0, 0, 0.4);
 
-    --filter-form-shadow-mobile: 0px 40px 90px rgba(0, 0, 0, 0.4);
+    // button
+    --button-border-color: #b9babe;
 }

@@ -177,6 +177,8 @@
                             </div>
                             <div class="filter__form">
                                 <div class="filter__form-wapper">
+                                    <img src="./assets/icon/arrow-up-form-filter.svg" alt="" class="filter__arrow-up" />
+
                                     <span class="filter__title--small"> Filter </span>
                                     <div class="filter__row">
                                         <div class="filter__form-price">
@@ -211,30 +213,31 @@
                                                 </div>
                                             </div>
                                             <div class="filter__sizes filter__form-blocks">
-                                                <div class="filter__size filter__form-block">Small</div>
-                                                <div class="filter__size filter__form-block">Medium</div>
-                                                <div class="filter__size filter__form-block">Large</div>
+                                                <div class="filter__size filter__form-block btn">Small</div>
+                                                <div class="filter__size filter__form-block btn">Medium</div>
+                                                <div class="filter__size filter__form-block btn">Large</div>
                                             </div>
                                         </div>
                                         <div class="filter__separate"></div>
 
                                         <div class="filter__form-branch">
                                             <span class="filter__title--small">Brand</span>
-                                            <div class="filter__search">
+                                            <form class="filter__search">
                                                 <input type="search" placeholder="Search brand name" />
-                                                <img src="assets/icon/search-filter.svg" alt="" class="icon" />
-                                            </div>
+                                                <button type="submit"><img src="assets/icon/search-filter.svg" alt="" class="icon" /></button>
+                                            </form>
 
                                             <div class="filter__branchs filter__form-blocks">
-                                                <div class="filter__branch filter__form-block">Small</div>
-                                                <div class="filter__branch filter__form-block">Medium</div>
-                                                <div class="filter__branch filter__form-block">Large</div>
+                                                <button class="filter__branch filter__form-block btn">Lavazza</button>
+                                                <button class="filter__branch filter__form-block btn">Nescafe</button>
+                                                <button class="filter__branch filter__form-block btn">Starbucks</button>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="filter__control">
-                                        <button class="filter__cancer">Cancel</button>
-                                        <button class="filter__show">Show Result</button>
+                                        <button class="filter__cancer btn btn__text">Cancel</button>
+                                        <button class="filter__show btn btn__primary">Show Result</button>
                                     </div>
                                 </div>
                             </div>

@@ -359,10 +359,24 @@ window.addEventListener("template-loaded", addClickFilter);
 function addClickFilter() {
     const filters = $$(".filter__wapper");
     const filterWapper = $$(".filter");
+    const btnFilter = $$(".filter__control .btn");
     filters.forEach((filter, index) => {
-        filter.onclick = () => {
+        filter.onclick = (e) => {
+            e.preventDefault();
             filterWapper[index].classList.toggle("active");
-            console.log(123);
+        };
+        btnFilter.forEach((btn) => {
+            btn.onclick = () => {
+                filterWapper[index].classList.toggle("active");
+            };
+        });
+        document.onclick = function (e) {
+            if (!e.target.closest(".filter")) {
+                const isActive = filterWapper[index].classList.contains("active");
+                if (isActive) {
+                    filterWapper[index].classList.toggle("active");
+                }
+            }
         };
     });
 }
