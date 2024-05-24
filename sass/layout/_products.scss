@@ -1,6 +1,7 @@
 @use "../abstract" as ab;
 
 .products {
+    padding-bottom: 80px;
     &__row-title {
         margin-bottom: 21px;
         display: flex;
