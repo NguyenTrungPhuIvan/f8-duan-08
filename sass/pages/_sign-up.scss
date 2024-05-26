@@ -1,0 +1,279 @@
+@use "../abstract" as ab;
+
+.auth {
+    display: flex;
+    min-height: 100vh;
+
+    &__intro {
+        flex: 1;
+        position: relative;
+        background: var(--sign-up-left-bg-color);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+
+        img {
+            @include ab.breakpoint(lg) {
+                max-width: 100%;
+            }
+        }
+
+        @include ab.breakpoint(lg) {
+            padding: 0 30px;
+        }
+        &-desc {
+            margin-top: 50px;
+            color: var(--sign-up-text-color);
+            text-align: center;
+            width: 412px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+            @include ab.breakpoint(lg) {
+                width: 100%;
+            }
+            @include ab.breakpoint(md) {
+                width: 412px;
+            }
+            @include ab.breakpoint(sm) {
+                width: 100%;
+            }
+        }
+
+        &-logo,
+        &-arrow {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &-logo {
+            top: 50px;
+        }
+        &-arrow {
+            bottom: 50px;
+        }
+    }
+
+    &__content {
+        padding: 50px;
+        flex: 1;
+        background: var(--sign-up-bg-color);
+        transition: transform 0.3s;
+        overflow-y: auto;
+
+        &:has(input:invalid) .auth__btn-sign-up,
+        &:has(.invalid) .auth__btn-sign-up,
+        &:has(#auth__checkbox:not(:checked)) .auth__btn-sign-up {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        &-inner {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+
+            @include ab.breakpoint(md) {
+                width: min(460px, 100%);
+                padding: 30px 0;
+                margin: 0 auto;
+            }
+        }
+
+        @include ab.breakpoint(lg) {
+            padding: 0 30px;
+        }
+        @include ab.breakpoint(md) {
+            position: fixed;
+            inset: 0;
+            transform: translateX(100%);
+            &.show {
+                transform: translateX(0px);
+            }
+        }
+        @include ab.breakpoint(sm) {
+            padding: 0 30px;
+        }
+    }
+    &__title {
+        margin-top: 50px;
+        color: var(--sign-up-text-color);
+        text-align: center;
+
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 146.667%;
+
+        @include ab.breakpoint(md) {
+            font-size: 2.2rem;
+        }
+    }
+    &__desc {
+        margin-top: 10px;
+        color: #9e9da8;
+        text-align: center;
+        width: 430px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+        @include ab.breakpoint(lg) {
+            width: 100%;
+        }
+        @include ab.breakpoint(md) {
+            font-size: 1.4rem;
+        }
+    }
+    &__row {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+    }
+    &__form {
+        input:focus {
+            border-color: #77dae6;
+            border-width: 2px;
+        }
+
+        @include ab.breakpoint(lg) {
+            width: 100%;
+
+            .form-block__input {
+                width: 100%;
+            }
+        }
+        @include ab.breakpoint(md) {
+            margin-top: 30px;
+            .form-block__input {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__form-group {
+        display: flex;
+        gap: 10px;
+
+        @include ab.breakpoint(lg) {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        position: relative;
+        user-select: none;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 18px;
+            width: 18px;
+            background: transparent;
+            border-radius: 4px;
+            border: 2px solid var(--sign-up-text-2-color);
+        }
+
+        &::after {
+            content: url("../../assets/icon/checked.svg");
+            display: none;
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            left: 2px;
+            height: 15px;
+            width: 15px;
+            filter: brightness(0) saturate(100%) invert(98%) sepia(94%) saturate(0%) hue-rotate(136deg) brightness(112%) contrast(100%);
+        }
+
+        &:has(:checked)::after {
+            display: block;
+        }
+        &:has(:checked)::before {
+            background: #ffb700;
+            border-color: #ffb700;
+        }
+    }
+    &__policy-text {
+        margin-left: 10px;
+
+        @include ab.breakpoint(lg) {
+            width: initial;
+        }
+    }
+    &__recovory,
+    &__policy-text {
+        color: var(--sign-up-text-2-color);
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+    &__recovory {
+        color: #0071dc;
+        transition: opacity 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__btn {
+        width: 480px;
+        min-height: 52px;
+
+        /* Medium 18 */
+        font-family: Gordita;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; /* 144.444% */
+
+        @include ab.breakpoint(lg) {
+            width: 100%;
+        }
+    }
+
+    &__btn-sign-up {
+        margin-top: 60px;
+        color: #1a162e;
+
+        @include ab.breakpoint(lg) {
+            margin-top: 30px;
+        }
+    }
+    &__btn-sign-in {
+        color: var(--sign-up-text-color);
+
+        margin-top: 30px;
+        img {
+            filter: var(--sign-up-google-filter);
+        }
+    }
+
+    &__google {
+        margin-left: 10px;
+    }
+
+    &__sign-in-text {
+        margin-top: 108px;
+        color: var(--sign-up-text-2-color);
+        font-size: 1.8rem;
+        line-height: 144.444%;
+
+        a {
+            color: #0071dc;
+            font-weight: 500;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        @include ab.breakpoint(lg) {
+            font-size: 1.6rem;
+        }
+        @include ab.breakpoint(md) {
+            margin-top: 40px;
+        }
+    }
+}

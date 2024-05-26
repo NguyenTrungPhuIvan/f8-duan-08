@@ -86,4 +86,15 @@
 
     // footer
     --footer-bg-color: var(--header-bg-color);
+
+    // sign-up
+    --sign-up-text-color: #1a162e;
+    --sign-up-text-2-color: #9e9da8;
+    --sign-up-left-bg-color: #f6f6f6;
+    --sign-up-bg-color: #ffffff;
+
+    --sign-up-google-filter: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7305%) hue-rotate(214deg) brightness(94%) contrast(95%);
+
+    // form-block
+    --form-block-text-email-color: #d2d1d6;
 }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grocery Mart</title>
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- icon -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- script -->
+        <script src="./assets/JS/script.js"></script>
+    </head>
+    <body>
+        <main class="auth">
+            <div class="auth__intro">
+                <a href="./" class="logo d-none d-md-flex auth__intro-logo">
+                    <img src="./assets/icon/logo.svg" alt="" />
+                    <span class="logo__name">grocerymart</span>
+                </a>
+                <img src="./assets/img/auth/img-sign-up.svg" alt="" class="auth__intro-img" />
+                <p class="auth__intro-desc">The best of luxury brand values, high quality products, and innovative services</p>
+                <button class="auth__intro-arrow d-none d-md-block js-toggle" toggle-target="#auth__content">
+                    <img src="./assets/img/auth/arrow-auth.svg" alt="" />
+                </button>
+            </div>
+            <div class="auth__content hide" id="auth__content">
+                <div class="auth__content-inner">
+                    <a href="./" class="logo">
+                        <img src="./assets/icon/logo.svg" alt="" />
+                        <span class="logo__name">grocerymart</span>
+                    </a>
+                    <h1 class="auth__title">Sign Up</h1>
+                    <p class="auth__desc">Let’s create your account and Shop like a pro and save money.</p>
+                    <form action="" class="auth__form form-block">
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <div class="auth__form-group form-block__form-group js-formGroup">
+                                <input type="email" class="form-block__input js-email" placeholder="Email" required />
+                                <img class="form-block__icon js-icon" src="./assets/icon/mail.svg" alt="" />
+                            </div>
+                            <span class="auth__error form-block__error js-error">Email không hợp lệ ( 6 kí tự trở lên )</span>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <div class="auth__form-group form-block__form-group js-formGroup">
+                                <input type="password" class="form-block__input js-password" placeholder="Password" required />
+                                <img class="form-block__icon js-icon" src="./assets/icon/lock.svg" alt="" />
+                            </div>
+                            <span class="auth__error form-block__error js-error">Mật khẩu không hợp lệ ( 6 kí tự trở lên )</span>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <div class="auth__form-group form-block__form-group js-formGroup">
+                                <input type="password" class="form-block__input js-repassword" placeholder="Confirm Password" required />
+                                <img class="form-block__icon js-icon" src="./assets/icon/lock.svg" alt="" />
+                            </div>
+                            <span class="auth__error form-block__error js-error">Mật khẩu không khớp</span>
+                        </div>
+                        <div class="auth__row">
+                            <div class="auth__form-group auth__policy">
+                                <label class="auth__label">
+                                    <input type="checkbox" id="auth__checkbox" hidden />
+
+                                    <p class="auth__policy-text">Set as default card</p>
+                                </label>
+                            </div>
+                            <a href="#!" class="auth__recovory d-lg-none">Recovery Password</a>
+                        </div>
+                    </form>
+                    <a href="./index-signed.html" class="btn btn__primary auth__btn auth__btn-sign-up">Sign Up</a>
+                    <a href="./index-signed.html" class="btn btn__ouline auth__btn auth__btn-sign-in"
+                        ><img src="./assets/icon/google.svg" alt="" />
+                        <p class="auth__google">Sign in with Gmail</p>
+                    </a>
+                    <p class="auth__sign-in-text">You have an account yet?<a href="#!">Sign In</a></p>
+                </div>
+            </div>
+        </main>
+        <script>
+            window.dispatchEvent(new Event("template-loaded"));
+        </script>
+    </body>
+</html>

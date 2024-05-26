@@ -380,3 +380,120 @@ function addClickFilter() {
         };
     });
 }
+window.addEventListener("template-loaded", checkInput);
+
+function checkInput() {
+    const emailJS = $(".js-email");
+    const password = $(".js-password");
+    const repassword = $(".js-repassword");
+
+    let inputCheckTimeOut;
+
+    const timeTimeOut = 1000;
+    const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    emailJS.addEventListener("input", () => {
+        clearTimeout(inputCheckTimeOut);
+        inputCheckTimeOut = setTimeout(() => {
+            validateEmail();
+        }, timeTimeOut);
+    });
+
+    function validateEmail() {
+        const emailJSValue = emailJS.value;
+        const errorText = $(".js-formWrapper:has(.js-email) .js-error");
+        const errorImg = $(".js-email ~ .js-icon");
+        const Wrapper = emailJS.closest(".js-formGroup");
+
+        if (emailJSValue.length <= 6 || !mailRegex.test(emailJSValue)) {
+            emailJS.classList.add("invalid");
+            emailJS.classList.remove("valid");
+            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.borderColor = "red";
+
+            errorText.style.display = "block";
+            errorImg.src = "./assets/icon/error-form.svg";
+            errorImg.style.animation = "shake 0.8s";
+        } else {
+            emailJS.classList.add("valid");
+            emailJS.classList.remove("invalid");
+            Wrapper.style.background = "transparent";
+            Wrapper.style.borderColor = "#77dae6";
+
+            errorText.style.display = "none";
+            errorImg.src = "./assets/icon/mail.svg";
+            errorImg.style.animation = "none";
+        }
+    }
+
+    password.addEventListener("input", () => {
+        clearTimeout(inputCheckTimeOut);
+        inputCheckTimeOut = setTimeout(() => {
+            validatePassword();
+        }, timeTimeOut);
+    });
+
+    function validatePassword() {
+        const passwordValue = password.value;
+        const errorText = $(".js-formWrapper:has(.js-password) .js-error");
+        const errorImg = $(".js-password ~ .js-icon");
+        const Wrapper = password.closest(".js-formGroup");
+
+        if (passwordValue.length <= 6) {
+            password.classList.add("invalid");
+            password.classList.remove("valid");
+
+            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.borderColor = "red";
+            errorText.style.display = "block";
+            errorImg.src = "./assets/icon/error-form.svg";
+            errorImg.style.animation = "shake 0.8s";
+        } else {
+            password.classList.add("valid");
+            password.classList.remove("invalid");
+
+            Wrapper.style.background = "transparent";
+            Wrapper.style.borderColor = "#77dae6";
+
+            errorText.style.display = "none";
+            errorImg.src = "./assets/icon/lock.svg";
+            errorImg.style.animation = "none";
+        }
+    }
+    repassword.addEventListener("input", () => {
+        clearTimeout(inputCheckTimeOut);
+        inputCheckTimeOut = setTimeout(() => {
+            validateRePassword();
+        }, timeTimeOut);
+    });
+
+    function validateRePassword() {
+        const passwordValue = password.value;
+        const rePasswordValue = repassword.value;
+        const Wrapper = repassword.closest(".js-formGroup");
+
+        const errorText = $(".js-formWrapper:has(.js-repassword) .js-error");
+        const errorImg = $(".js-repassword ~ .js-icon");
+
+        if (passwordValue !== rePasswordValue || rePasswordValue.length <= 6) {
+            repassword.classList.add("invalid");
+            repassword.classList.remove("valid");
+
+            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.borderColor = "red";
+            errorText.style.display = "block";
+            errorImg.src = "./assets/icon/error-form.svg";
+            errorImg.style.animation = "shake 0.8s";
+        } else {
+            repassword.classList.add("valid");
+            repassword.classList.remove("invalid");
+
+            Wrapper.style.background = "transparent";
+            Wrapper.style.borderColor = "#77dae6";
+
+            errorText.style.display = "none";
+            errorImg.src = "./assets/icon/lock.svg";
+            errorImg.style.animation = "none";
+        }
+    }
+}

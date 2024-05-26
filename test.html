@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Email Validation</title>
+        <style>
+            .error {
+                color: red;
+                font-size: 12px;
+                display: none; /* Ẩn thông báo lỗi ban đầu */
+            }
+            .valid {
+                border-color: green;
+            }
+            .invalid {
+                border-color: red;
+            }
+            .info {
+                font-size: 12px;
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" aria-describedby="emailHelp" />
+            <span id="error" class="error">Email must be at least 6 characters long and a valid email format</span>
+            <br /><br />
+            <label for="other">Other Input:</label>
+            <input type="text" id="other" name="other" />
+        </form>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const emailInput = document.getElementById("email");
+                const errorSpan = document.getElementById("error");
+                let typingTimer; // Timer identifier
+                const doneTypingInterval = 1000; // Time in ms, 1 second
+
+                // Regular expression for validating email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                emailInput.addEventListener("input", function () {
+                    clearTimeout(typingTimer);
+                    typingTimer = setTimeout(validateEmail, doneTypingInterval);
+                });
+
+                function validateEmail() {
+                    const emailValue = emailInput.value;
+                    if (emailValue.length < 6 || !emailRegex.test(emailValue)) {
+                        emailInput.classList.add("invalid");
+                        emailInput.classList.remove("valid");
+                        errorSpan.style.display = "block";
+                        errorSpan.textContent = "Email must be at least 6 characters long and in a valid email format";
+                    } else {
+                        emailInput.classList.add("valid");
+                        emailInput.classList.remove("invalid");
+                        errorSpan.style.display = "none";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

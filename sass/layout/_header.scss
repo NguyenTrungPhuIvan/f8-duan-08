@@ -11,7 +11,7 @@
         position: relative;
         @include ab.flexCenter($j: null);
         @include ab.breakpoint(md) {
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
     }
     .menu-bars {
@@ -88,6 +88,22 @@
             img {
                 display: block;
                 width: 100%;
+            }
+        }
+
+        &-sign-in,
+        &-sign-up {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+            height: 40px;
+        }
+
+        &-sign-up {
+            @include ab.breakpoint(sm) {
+                font-size: 1.4rem;
+                height: 34px;
+                padding: 0 10px;
             }
         }
     }

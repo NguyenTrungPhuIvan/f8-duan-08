@@ -9,4 +9,10 @@
         font-weight: 700;
         line-height: 1.45;
     }
+
+    img {
+        @include ab.breakpoint(sm) {
+            width: 24px;
+        }
+    }
 }

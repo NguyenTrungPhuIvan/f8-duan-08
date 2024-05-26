@@ -85,4 +85,16 @@ html.dark {
 
     // footer
     --footer-bg-color: var(--header-bg-color);
+
+    // sign-up
+    --sign-up-text-color: #9e9da8;
+    --sign-up-text-2-color: #b9babe;
+
+    --sign-up-left-bg-color: #171c28;
+    --sign-up-bg-color: #292e39;
+
+    --sign-up-google-filter: brightness(0) saturate(100%) invert(72%) sepia(5%) saturate(472%) hue-rotate(206deg) brightness(88%) contrast(83%);
+
+    // form-block
+    --form-block-text-email-color: #b9babe;
 }
