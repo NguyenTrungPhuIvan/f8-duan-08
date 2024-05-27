@@ -3023,6 +3023,9 @@ html.dark {
   align-items: center;
   overflow-y: auto;
 }
+.auth__intro img {
+  width: min(424px, 100%);
+}
 @media (max-width: 991.98px) {
   .auth__intro img {
     max-width: 100%;
@@ -3175,7 +3178,7 @@ html.dark {
   }
 }
 .auth__form.auth__form--forgot {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 .auth__form-group {
   display: flex;

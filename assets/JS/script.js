@@ -385,6 +385,7 @@ window.addEventListener("template-loaded", checkInput);
 function checkInput() {
     const emailJS = $(".js-email");
     const password = $(".js-password");
+    const passwordNone = $(".js-password-non");
     const repassword = $(".js-repassword");
 
     let inputCheckTimeOut;
@@ -392,12 +393,14 @@ function checkInput() {
     const timeTimeOut = 1000;
     const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    emailJS.addEventListener("input", () => {
-        clearTimeout(inputCheckTimeOut);
-        inputCheckTimeOut = setTimeout(() => {
-            validateEmail();
-        }, timeTimeOut);
-    });
+    if (emailJS) {
+        emailJS.addEventListener("input", () => {
+            clearTimeout(inputCheckTimeOut);
+            inputCheckTimeOut = setTimeout(() => {
+                validateEmail();
+            }, timeTimeOut);
+        });
+    }
 
     function validateEmail() {
         const emailJSValue = emailJS.value;
@@ -462,6 +465,43 @@ function checkInput() {
             errorImg.style.animation = "none";
         }
     }
+    if (passwordNone) {
+        passwordNone.addEventListener("input", () => {
+            clearTimeout(inputCheckTimeOut);
+            inputCheckTimeOut = setTimeout(() => {
+                validatePasswordNon();
+            }, timeTimeOut);
+        });
+    }
+
+    function validatePasswordNon() {
+        const passwordValue = passwordNone.value;
+        const errorText = $(".js-formWrapper:has(.js-password-non) .js-error");
+        const errorImg = $(".js-password-non ~ .js-icon");
+        const Wrapper = passwordNone.closest(".js-formGroup");
+
+        if (passwordValue.length <= 6) {
+            passwordNone.classList.add("invalid");
+            passwordNone.classList.remove("valid");
+
+            Wrapper.style.background = "rgb(237,67,55,0.4)";
+            Wrapper.style.borderColor = "red";
+            errorText.style.display = "block";
+            errorImg.src = "./assets/icon/error-form.svg";
+            errorImg.style.animation = "shake 0.8s";
+        } else {
+            passwordNone.classList.add("valid");
+            passwordNone.classList.remove("invalid");
+
+            Wrapper.style.background = "transparent";
+            Wrapper.style.borderColor = "#77dae6";
+
+            errorText.style.display = "none";
+            errorImg.src = "./assets/icon/lock.svg";
+            errorImg.style.animation = "none";
+        }
+    }
+
     if (repassword) {
         repassword.addEventListener("input", () => {
             clearTimeout(inputCheckTimeOut);
