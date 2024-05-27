@@ -408,7 +408,7 @@ function checkInput() {
         if (emailJSValue.length <= 6 || !mailRegex.test(emailJSValue)) {
             emailJS.classList.add("invalid");
             emailJS.classList.remove("valid");
-            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.background = "rgb(237,67,55,0.4)";
             Wrapper.style.borderColor = "red";
 
             errorText.style.display = "block";
@@ -426,12 +426,14 @@ function checkInput() {
         }
     }
 
-    password.addEventListener("input", () => {
-        clearTimeout(inputCheckTimeOut);
-        inputCheckTimeOut = setTimeout(() => {
-            validatePassword();
-        }, timeTimeOut);
-    });
+    if (password) {
+        password.addEventListener("input", () => {
+            clearTimeout(inputCheckTimeOut);
+            inputCheckTimeOut = setTimeout(() => {
+                validatePassword();
+            }, timeTimeOut);
+        });
+    }
 
     function validatePassword() {
         const passwordValue = password.value;
@@ -443,7 +445,7 @@ function checkInput() {
             password.classList.add("invalid");
             password.classList.remove("valid");
 
-            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.background = "rgb(237,67,55,0.4)";
             Wrapper.style.borderColor = "red";
             errorText.style.display = "block";
             errorImg.src = "./assets/icon/error-form.svg";
@@ -460,12 +462,14 @@ function checkInput() {
             errorImg.style.animation = "none";
         }
     }
-    repassword.addEventListener("input", () => {
-        clearTimeout(inputCheckTimeOut);
-        inputCheckTimeOut = setTimeout(() => {
-            validateRePassword();
-        }, timeTimeOut);
-    });
+    if (repassword) {
+        repassword.addEventListener("input", () => {
+            clearTimeout(inputCheckTimeOut);
+            inputCheckTimeOut = setTimeout(() => {
+                validateRePassword();
+            }, timeTimeOut);
+        });
+    }
 
     function validateRePassword() {
         const passwordValue = password.value;
@@ -479,7 +483,7 @@ function checkInput() {
             repassword.classList.add("invalid");
             repassword.classList.remove("valid");
 
-            Wrapper.style.background = "#FAD8D2";
+            Wrapper.style.background = "rgb(237,67,55,0.4)";
             Wrapper.style.borderColor = "red";
             errorText.style.display = "block";
             errorImg.src = "./assets/icon/error-form.svg";
@@ -496,4 +500,20 @@ function checkInput() {
             errorImg.style.animation = "none";
         }
     }
+}
+
+window.addEventListener("template-loaded", onClickShowMessage);
+
+function onClickShowMessage() {
+    const message = $$(".js-message");
+    const btnShowMessage = $$(".js-btn-message");
+    const btnChangePassWord = $(".auth__change-password-block");
+    btnShowMessage.forEach((btn) => {
+        const targetMessage = btn.getAttribute("btn-target");
+        console.log(targetMessage);
+        btn.onclick = () => {
+            $(targetMessage).classList.add("active");
+            btnChangePassWord.style.display = "flex";
+        };
+    });
 }

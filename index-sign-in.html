@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign up | Grocery Mart</title>
+        <title>Sign in | Grocery Mart</title>
 
         <!-- favicon -->
         <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
@@ -38,25 +38,18 @@
     </head>
     <body>
         <main class="auth">
-            <div class="auth__intro">
-                <a href="./" class="logo d-none d-md-flex auth__intro-logo">
-                    <img src="./assets/icon/logo.svg" alt="" />
-                    <span class="logo__name">grocerymart</span>
-                </a>
+            <div class="auth__intro d-md-none">
                 <img src="./assets/img/auth/img-sign-up.svg" alt="" class="auth__intro-img" />
                 <p class="auth__intro-desc">The best of luxury brand values, high quality products, and innovative services</p>
-                <button class="auth__intro-arrow d-none d-md-block js-toggle" toggle-target="#auth__content">
-                    <img src="./assets/img/auth/arrow-auth.svg" alt="" />
-                </button>
             </div>
-            <div class="auth__content hide" id="auth__content">
+            <div class="auth__content show" id="auth__content">
                 <div class="auth__content-inner">
                     <a href="./" class="logo">
                         <img src="./assets/icon/logo.svg" alt="" />
                         <span class="logo__name">grocerymart</span>
                     </a>
-                    <h1 class="auth__title">Sign Up</h1>
-                    <p class="auth__desc">Let’s create your account and Shop like a pro and save money.</p>
+                    <h1 class="auth__title">Hello Again!</h1>
+                    <p class="auth__desc">Welcome back to sign in. As a returning customer, you have access to your previously saved all information.</p>
                     <form action="" class="auth__form form-block">
                         <div class="auth__form-wrapper js-formWrapper">
                             <div class="auth__form-group form-block__form-group js-formGroup">
@@ -72,13 +65,7 @@
                             </div>
                             <span class="auth__error form-block__error js-error">Mật khẩu không hợp lệ ( 6 kí tự trở lên )</span>
                         </div>
-                        <div class="auth__form-wrapper js-formWrapper">
-                            <div class="auth__form-group form-block__form-group js-formGroup">
-                                <input type="password" class="form-block__input js-repassword" placeholder="Confirm Password" required />
-                                <img class="form-block__icon js-icon" src="./assets/icon/lock.svg" alt="" />
-                            </div>
-                            <span class="auth__error form-block__error js-error">Mật khẩu không khớp</span>
-                        </div>
+
                         <div class="auth__row">
                             <div class="auth__form-group auth__policy">
                                 <label class="auth__label">
@@ -90,12 +77,12 @@
                             <a href="index-forgot-password.html" class="auth__recovory">Forgot password?</a>
                         </div>
                     </form>
-                    <a href="./index-signed.html" class="btn btn__primary auth__btn auth__btn-sign-up">Sign Up</a>
+                    <a href="./index-signed.html" class="btn btn__primary auth__btn auth__btn-sign-up">Sign In</a>
                     <a href="./index-signed.html" class="btn btn__ouline auth__btn auth__btn-sign-in"
                         ><img src="./assets/icon/google.svg" alt="" />
                         <p class="auth__google">Sign in with Google</p>
                     </a>
-                    <p class="auth__sign-in-text">You have an account yet?<a href="./index-sign-in.html">Sign In</a></p>
+                    <p class="auth__sign-in-text">You have an account yet?<a href="index-sign-up.html">Sign Up</a></p>
                 </div>
             </div>
         </main>

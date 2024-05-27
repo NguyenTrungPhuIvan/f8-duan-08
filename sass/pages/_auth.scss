@@ -3,7 +3,9 @@
 .auth {
     display: flex;
     min-height: 100vh;
-
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
+    }
     &__intro {
         flex: 1;
         position: relative;
@@ -38,6 +40,7 @@
                 width: 412px;
             }
             @include ab.breakpoint(sm) {
+                font-size: 1.5rem;
                 width: 100%;
             }
         }
@@ -78,13 +81,14 @@
 
             @include ab.breakpoint(md) {
                 width: min(460px, 100%);
-                padding: 30px 0;
+                padding: 20px 0;
                 margin: 0 auto;
             }
         }
 
         @include ab.breakpoint(lg) {
-            padding: 0 30px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
         @include ab.breakpoint(md) {
             position: fixed;
@@ -132,6 +136,8 @@
         justify-content: space-between;
     }
     &__form {
+        margin-top: 60px;
+
         input:focus {
             border-color: #77dae6;
             border-width: 2px;
@@ -149,6 +155,10 @@
             .form-block__input {
                 font-size: 1.6rem;
             }
+        }
+
+        &.auth__form--forgot {
+            margin-top: 60px;
         }
     }
 
@@ -206,6 +216,10 @@
     }
     &__recovory,
     &__policy-text {
+        @include ab.breakpoint(lg) {
+            font-size: 13px;
+        }
+        flex-shrink: 0;
         color: var(--sign-up-text-2-color);
         font-size: 1.5rem;
         font-weight: 500;
@@ -220,15 +234,12 @@
     }
 
     &__btn {
-        width: 480px;
+        width: 520px;
         min-height: 52px;
 
-        /* Medium 18 */
-        font-family: Gordita;
-        font-size: 18px;
-        font-style: normal;
+        font-size: 1.8rem;
         font-weight: 500;
-        line-height: 26px; /* 144.444% */
+        line-height: 144.444%;
 
         @include ab.breakpoint(lg) {
             width: 100%;
@@ -241,6 +252,9 @@
 
         @include ab.breakpoint(lg) {
             margin-top: 30px;
+        }
+        &.auth__btn--forgot {
+            margin-top: 40px;
         }
     }
     &__btn-sign-in {
@@ -269,11 +283,34 @@
                 opacity: 0.7;
             }
         }
+
         @include ab.breakpoint(lg) {
             font-size: 1.6rem;
         }
         @include ab.breakpoint(md) {
             margin-top: 40px;
         }
+    }
+
+    &__message {
+        display: none;
+        margin-top: 30px;
+        &--forgot {
+            width: 520px;
+        }
+    }
+
+    &__change-password-block {
+        display: none;
+        width: 520px;
+        margin: 0 auto;
+        margin-top: 30px;
+        justify-content: flex-end;
+    }
+
+    &__change-password {
+        font-size: 1.4rem;
+        color: white;
+        font-weight: 500;
     }
 }

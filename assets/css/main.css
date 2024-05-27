@@ -1319,12 +1319,9 @@ a {
 }
 @keyframes shake {
   10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
+  50%, 70% {
     transform: translate3d(-4px, 0, 0);
   }
   40%, 60% {
@@ -1349,6 +1346,9 @@ a {
 }
 .btn__primary {
   background: #ffb700;
+}
+.btn__blue {
+  background: #0071dc;
 }
 .btn__ouline {
   background: transparent;
@@ -2410,7 +2410,6 @@ a {
 }
 
 .form-block {
-  margin-top: 60px;
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -2449,6 +2448,31 @@ a {
   padding: 12px;
   height: 50px;
   object-fit: contain;
+}
+
+.message__inner {
+  background: rgba(135, 204, 109, 0.2);
+  border: 1px solid green;
+  border-radius: 6px;
+}
+.message__row {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.message__icon {
+  width: 24px;
+  filter: brightness(0) saturate(100%) invert(20%) sepia(68%) saturate(6725%) hue-rotate(119deg) brightness(96%) contrast(103%);
+}
+.message__text {
+  color: var(--message-text-color);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.message.active {
+  display: block;
 }
 
 html.dark {
@@ -2504,6 +2528,7 @@ html.dark {
   --sign-up-bg-color: #292e39;
   --sign-up-google-filter: brightness(0) saturate(100%) invert(72%) sepia(5%) saturate(472%) hue-rotate(206deg) brightness(88%) contrast(83%);
   --form-block-text-email-color: #b9babe;
+  --message-text-color: rgb(172, 235, 172);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2574,6 +2599,7 @@ html.dark {
   --sign-up-bg-color: #ffffff;
   --sign-up-google-filter: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(7305%) hue-rotate(214deg) brightness(94%) contrast(95%);
   --form-block-text-email-color: #d2d1d6;
+  --message-text-color: green;
 }
 @media (max-width: 991.98px) {
   :root {
@@ -2982,6 +3008,11 @@ html.dark {
   display: flex;
   min-height: 100vh;
 }
+@supports (-webkit-touch-callout: none) {
+  .auth {
+    min-height: -webkit-fill-available;
+  }
+}
 .auth__intro {
   flex: 1;
   position: relative;
@@ -3023,6 +3054,7 @@ html.dark {
 }
 @media (max-width: 575.98px) {
   .auth__intro-desc {
+    font-size: 1.5rem;
     width: 100%;
   }
 }
@@ -3057,13 +3089,14 @@ html.dark {
 @media (max-width: 767.98px) {
   .auth__content-inner {
     width: min(460px, 100%);
-    padding: 30px 0;
+    padding: 20px 0;
     margin: 0 auto;
   }
 }
 @media (max-width: 991.98px) {
   .auth__content {
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 @media (max-width: 767.98px) {
@@ -3118,6 +3151,9 @@ html.dark {
   align-content: center;
   justify-content: space-between;
 }
+.auth__form {
+  margin-top: 60px;
+}
 .auth__form input:focus {
   border-color: #77dae6;
   border-width: 2px;
@@ -3137,6 +3173,9 @@ html.dark {
   .auth__form .form-block__input {
     font-size: 1.6rem;
   }
+}
+.auth__form.auth__form--forgot {
+  margin-top: 60px;
 }
 .auth__form-group {
   display: flex;
@@ -3189,10 +3228,16 @@ html.dark {
   }
 }
 .auth__recovory, .auth__policy-text {
+  flex-shrink: 0;
   color: var(--sign-up-text-2-color);
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
+}
+@media (max-width: 991.98px) {
+  .auth__recovory, .auth__policy-text {
+    font-size: 13px;
+  }
 }
 .auth__recovory {
   color: #0071dc;
@@ -3202,14 +3247,11 @@ html.dark {
   opacity: 0.7;
 }
 .auth__btn {
-  width: 480px;
+  width: 520px;
   min-height: 52px;
-  /* Medium 18 */
-  font-family: Gordita;
-  font-size: 18px;
-  font-style: normal;
+  font-size: 1.8rem;
   font-weight: 500;
-  line-height: 26px; /* 144.444% */
+  line-height: 144.444%;
 }
 @media (max-width: 991.98px) {
   .auth__btn {
@@ -3224,6 +3266,9 @@ html.dark {
   .auth__btn-sign-up {
     margin-top: 30px;
   }
+}
+.auth__btn-sign-up.auth__btn--forgot {
+  margin-top: 40px;
 }
 .auth__btn-sign-in {
   color: var(--sign-up-text-color);
@@ -3257,6 +3302,25 @@ html.dark {
   .auth__sign-in-text {
     margin-top: 40px;
   }
+}
+.auth__message {
+  display: none;
+  margin-top: 30px;
+}
+.auth__message--forgot {
+  width: 520px;
+}
+.auth__change-password-block {
+  display: none;
+  width: 520px;
+  margin: 0 auto;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+.auth__change-password {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */

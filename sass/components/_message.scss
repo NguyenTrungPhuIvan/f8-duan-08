@@ -1,0 +1,28 @@
+.message {
+    &__inner {
+        background: rgba(135, 204, 109, 0.2);
+        border: 1px solid green;
+        border-radius: 6px;
+    }
+
+    &__row {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__icon {
+        width: 24px;
+        filter: brightness(0) saturate(100%) invert(20%) sepia(68%) saturate(6725%) hue-rotate(119deg) brightness(96%) contrast(103%);
+    }
+    &__text {
+        color: var(--message-text-color);
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+    }
+    &.active {
+        display: block;
+    }
+}
