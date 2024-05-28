@@ -1,0 +1,144 @@
+.detail-product {
+    display: flex;
+    flex-direction: column;
+    background: var(--product-detail-bg-color);
+
+    &__container {
+        margin-top: 30px;
+    }
+}
+.product-info {
+    &__thumbs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    &__main-thumb {
+        position: relative;
+
+        width: 100%;
+        padding-top: 92%;
+        flex-shrink: 0;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__thumbs-sub {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+    &__thumb-sub-item {
+        width: 65px;
+        height: 65px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        background: var(--product-detail-card-bg-color);
+        color: var(--product-detail-card-text-primary-color);
+        padding: 60px;
+        font-weight: 500;
+    }
+    &__title {
+        font-size: 2.6rem;
+        line-height: 138.462%;
+        margin-bottom: 30px;
+    }
+    &__reviews {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.8rem;
+        line-height: 144.444%;
+        margin-bottom: 30px;
+    }
+    &__left {
+        padding-right: 15px;
+    }
+    &__right {
+        padding-left: 15px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 27px;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid #b9babe;
+        &-row {
+            display: flex;
+            align-items: center;
+
+            &--add {
+                gap: 20px;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+    &__tax {
+        margin-left: 10px;
+        color: #67b044;
+        display: inline-block;
+        padding: 2px 8px;
+        background: rgba($color: #67b044, $alpha: 0.2);
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+    &__total-price {
+        font-size: 2.6rem;
+        line-height: 138.462%;
+    }
+
+    &__btn-add {
+        height: 46px;
+
+        padding: 10px 55px;
+    }
+}
+.product-prop {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    &__item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        span {
+            display: block;
+        }
+    }
+    &__icon {
+        align-self: flex-start;
+        height: 20px;
+        width: 20px;
+    }
+    &__main-text {
+        font-size: 1.8rem;
+    }
+    &__sub-text {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 142.857%;
+    }
+}

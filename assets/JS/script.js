@@ -352,14 +352,31 @@ function handleClickHeart() {
             }
         };
     });
+    const heartQuareWrap = $$(".heart-square");
+    const heartsQuare = $$(".heart-square .icon");
+    heartQuareWrap.forEach((heart, index) => {
+        heart.onclick = () => {
+            heart.classList.toggle(`active-${index}`);
+            const activeHeart = $(`.heart-square.active-${index}`);
+            if (activeHeart) {
+                heartsQuare[index].src = "./assets/icon/red-heart.svg";
+                heartsQuare[index].style.filter = "none";
+                heartsQuare[index].style.translate = "0px 4px";
+            } else {
+                heartsQuare[index].src = "./assets/icon/heart-line.svg";
+                heartsQuare[index].style.filter = "var(--filter-icon)";
+                heartsQuare[index].style.translate = "0px";
+            }
+        };
+    });
 }
 
 window.addEventListener("template-loaded", addClickFilter);
 
 function addClickFilter() {
-    const filters = $$(".filter__wapper");
-    const filterWapper = $$(".filter");
-    const btnFilter = $$(".filter__control .btn");
+    const filters = $$(".form-filter__wapper");
+    const filterWapper = $$(".form-filter");
+    const btnFilter = $$(".form-filter__control .btn");
     filters.forEach((filter, index) => {
         filter.onclick = (e) => {
             e.preventDefault();
@@ -371,7 +388,7 @@ function addClickFilter() {
             };
         });
         document.onclick = function (e) {
-            if (!e.target.closest(".filter")) {
+            if (!e.target.closest(".form-filter")) {
                 const isActive = filterWapper[index].classList.contains("active");
                 if (isActive) {
                     filterWapper[index].classList.toggle("active");

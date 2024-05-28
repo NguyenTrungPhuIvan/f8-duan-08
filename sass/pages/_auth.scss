@@ -296,14 +296,16 @@
     &__message {
         display: none;
         margin-top: 30px;
-        &--forgot {
-            width: 520px;
+        width: 520px;
+
+        @include ab.breakpoint(lg) {
+            width: 100%;
         }
     }
 
     &__change-password-block {
         display: none;
-        width: 520px;
+        width: min(520px, 100%);
         margin: 0 auto;
         margin-top: 30px;
         justify-content: flex-end;

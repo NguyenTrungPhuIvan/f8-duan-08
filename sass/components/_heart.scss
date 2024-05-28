@@ -26,3 +26,17 @@
         object-fit: contain;
     }
 }
+.heart-square {
+    padding: 11px;
+    height: 46px;
+    width: 46px;
+    border-radius: 6px;
+    border: 1px solid var(--Secondary-Color-Secondary-3, #d2d1d6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .icon {
+        object-fit: contain;
+    }
+}
