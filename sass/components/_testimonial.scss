@@ -1,6 +1,9 @@
+@use "../abstract" as ab;
 .testimonial {
     &__card {
         padding: 30px;
+        height: 100%;
+        border-radius: 10px;
         color: var(--testimonial-text-color);
         background: var(--testimonial-bg-color);
         display: flex;
@@ -16,10 +19,16 @@
     }
     &__name {
         margin-left: 20px;
+        @include ab.breakpoint(xl) {
+            margin: 0;
+        }
         h3 {
             font-size: 2.2rem;
             font-weight: 500;
             line-height: 145.455%;
+            @include ab.breakpoint(md) {
+                font-size: 1.8rem;
+            }
         }
         span {
             margin-top: 10px;
@@ -31,6 +40,19 @@
     &__row {
         display: flex;
         align-items: center;
+        @include ab.breakpoint(xl) {
+            gap: 10px;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+        @include ab.breakpoint(md) {
+            gap: 20px;
+            flex-direction: row;
+            justify-content: flex-start;
+            text-align: left;
+        }
     }
 
     &__stars {
@@ -42,6 +64,9 @@
             height: 18px;
             object-fit: contain;
         }
+        @include ab.breakpoint(md) {
+            gap: 12px;
+        }
     }
 
     &__review {
@@ -49,5 +74,8 @@
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 144.444%;
+        @include ab.breakpoint(xl) {
+            margin: 0;
+        }
     }
 }

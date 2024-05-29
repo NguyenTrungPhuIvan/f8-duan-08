@@ -17,7 +17,7 @@
     height: 50px;
     border-radius: 50%;
     background: var(--heart-bg);
-    box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.3);
+    box-shadow: var(--heart-shadow);
     @include ab.breakpoint(lg) {
         box-shadow: none;
     }

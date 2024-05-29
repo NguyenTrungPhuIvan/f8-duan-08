@@ -1,3 +1,4 @@
+@use "../abstract" as ab;
 body:has(.detail-product) {
     background: var(--product-detail-bg-color);
 }
@@ -16,6 +17,9 @@ body:has(.detail-product) {
         font-weight: 700;
         line-height: 141.667%;
         margin-bottom: 30px;
+        @include ab.breakpoint(md) {
+            font-size: 1.8rem;
+        }
     }
 
     &__testimonial,
@@ -37,6 +41,9 @@ body:has(.detail-product) {
         gap: 20px;
         width: 100%;
         padding: 0 30px;
+        @include ab.breakpoint(lg) {
+            flex-direction: row-reverse;
+        }
     }
 
     &__main-thumb {
@@ -53,12 +60,18 @@ body:has(.detail-product) {
             height: 100%;
             object-fit: contain;
         }
+        @include ab.breakpoint(lg) {
+            width: 80%;
+        }
     }
 
     &__thumbs-sub {
         display: flex;
         gap: 30px;
         justify-content: center;
+        @include ab.breakpoint(lg) {
+            flex-direction: column;
+        }
     }
     &__thumb-sub-item {
         width: 65px;
@@ -79,11 +92,22 @@ body:has(.detail-product) {
         padding: 60px;
         font-weight: 500;
         border-radius: 10px;
+
+        @include ab.breakpoint(xxl) {
+            padding: 30px;
+        }
+        @include ab.breakpoint(lg) {
+            margin-top: 60px;
+        }
     }
     &__title {
         font-size: 2.6rem;
         line-height: 138.462%;
         margin-bottom: 30px;
+
+        @include ab.breakpoint(md) {
+            font-size: 2rem;
+        }
     }
     &__reviews {
         display: flex;
@@ -95,9 +119,15 @@ body:has(.detail-product) {
     }
     &__left {
         padding-right: 15px;
+        @include ab.breakpoint(xl) {
+            padding-right: 0;
+        }
     }
     &__right {
         padding-left: 15px;
+        @include ab.breakpoint(xl) {
+            padding-left: 0;
+        }
     }
 
     &__card {
@@ -140,6 +170,12 @@ body:has(.detail-product) {
         height: 46px;
 
         padding: 10px 55px;
+        @include ab.breakpoint(lg) {
+            width: 100%;
+        }
+        @include ab.breakpoint(sm) {
+            padding: 10px 20px;
+        }
     }
 
     &__form-weight {
@@ -147,6 +183,9 @@ body:has(.detail-product) {
 
         .form-filter__weight {
             gap: 50px;
+            @include ab.breakpoint(sm) {
+                gap: 30px;
+            }
         }
     }
 }
@@ -154,6 +193,11 @@ body:has(.detail-product) {
     display: flex;
     flex-direction: column;
     gap: 27px;
+
+    @include ab.breakpoint(xl) {
+        margin-top: 30px;
+    }
+
     &__item {
         display: flex;
         gap: 20px;
@@ -184,9 +228,13 @@ body:has(.detail-product) {
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
-
+        flex-wrap: wrap;
         display: flex;
         gap: 60px;
+        @include ab.breakpoint(md) {
+            font-size: 1.4rem;
+            gap: 20px;
+        }
     }
     &-item {
         &.active {
