@@ -103,6 +103,7 @@
 
     // breakscumb
     --breakcumbs-bg-color: #f6f6f6;
+    --breakcumbs-text-current-color: #1a162e;
     --breakcumbs-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
 
     @include ab.breakpoint(md) {
@@ -117,4 +118,9 @@
     @include ab.breakpoint(md) {
         --product-detail-bg-color: #fafafd;
     }
+
+    // testimonial
+    --testimonial-bg-color: #fafafd;
+    --testimonial-text-color: #1a162e;
+    --testimonial-text-hr-color: #3e4043;
 }

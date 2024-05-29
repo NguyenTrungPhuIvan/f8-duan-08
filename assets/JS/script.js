@@ -574,3 +574,41 @@ function onClickShowMessage() {
         };
     });
 }
+
+window.addEventListener("template-loaded", onClickTabList);
+
+function onClickTabList() {
+    const tabLists = $$(".js-tab-list");
+    const tabItems = $$(".js-tab-item");
+
+    tabLists.forEach((tablist, index) => {
+        tablist.onclick = () => {
+            const active = $(".js-tab-item.active");
+            const activeList = $(".js-tab-list.active");
+            if (active && activeList) {
+                active.classList.remove("active");
+                activeList.classList.remove("active");
+                tablist.classList.add("active");
+                tabItems[index].classList.add("active");
+            }
+        };
+    });
+}
+
+window.addEventListener("template-loaded", onClickImgDetail);
+
+function onClickImgDetail() {
+    const mainImg = $(".js-main-img");
+    const Imgs = $$(".js-sub-img");
+
+    Imgs.forEach((img, index) => {
+        img.onclick = () => {
+            const active = $(".js-sub-img.active");
+            if (active) {
+                active.classList.remove("active");
+                img.classList.add("active");
+                mainImg.children[0].src = img.children[0].getAttribute("src");
+            }
+        };
+    });
+}

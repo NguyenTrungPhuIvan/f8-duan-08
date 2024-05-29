@@ -103,10 +103,17 @@ html.dark {
 
     // breakscumb
     --breakcumbs-bg-color: #171c28;
+    --breakcumbs-text-current-color: #fff;
+
     --breakcumbs-shadow: 0px 20px 60px 10px rgba(23, 28, 40, 0.2);
 
     // product-detail
     --product-detail-bg-color: #292e39;
     --product-detail-card-bg-color: #171c28;
     --product-detail-card-text-primary-color: #eee;
+
+    // testimonial
+    --testimonial-bg-color: #171c28;
+    --testimonial-text-color: #fff;
+    --testimonial-text-hr-color: #ebebeb;
 }

@@ -359,7 +359,7 @@
         }
     }
     &__separate {
-        width: 1px;
+        min-width: 2px;
         align-self: stretch;
         background: var(--filter-form-separate);
         @include ab.breakpoint(lg) {

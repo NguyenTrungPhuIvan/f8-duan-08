@@ -1,10 +1,33 @@
+body:has(.detail-product) {
+    background: var(--product-detail-bg-color);
+}
+
 .detail-product {
     display: flex;
     flex-direction: column;
-    background: var(--product-detail-bg-color);
 
     &__container {
         margin-top: 30px;
+    }
+
+    &__testimonial-title {
+        color: var(--testimonial-text-color);
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 141.667%;
+        margin-bottom: 30px;
+    }
+
+    &__testimonial,
+    &__desc,
+    &__similar {
+        display: none;
+    }
+    &__desc.active,
+    &__testimonial.active,
+    &__similar.active {
+        display: block;
+        margin-top: 40px;
     }
 }
 .product-info {
@@ -42,7 +65,9 @@
         height: 65px;
         border-radius: 6px;
         border: 1px solid #ccc;
-
+        &.active {
+            border-color: #feb600;
+        }
         img {
             width: 100%;
         }
@@ -53,6 +78,7 @@
         color: var(--product-detail-card-text-primary-color);
         padding: 60px;
         font-weight: 500;
+        border-radius: 10px;
     }
     &__title {
         font-size: 2.6rem;
@@ -115,6 +141,14 @@
 
         padding: 10px 55px;
     }
+
+    &__form-weight {
+        width: 100%;
+
+        .form-filter__weight {
+            gap: 50px;
+        }
+    }
 }
 .product-prop {
     display: flex;
@@ -140,5 +174,88 @@
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 142.857%;
+    }
+}
+
+.product-tab {
+    &-list {
+        margin-top: 30px;
+        color: #9e9da8;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+
+        display: flex;
+        gap: 60px;
+    }
+    &-item {
+        &.active {
+            color: var(--testimonial-text-color);
+        }
+    }
+
+    &-content {
+        color: var(--product-detail-card-text-primary-color);
+        margin-top: 30px;
+        font-family: "lato", sans-serif;
+        * {
+            margin: 20px 0;
+        }
+        hr {
+            margin: 40px 0;
+        }
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: var(--product-detail-card-text-primary-color);
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+        }
+
+        figure {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+            text-align: center;
+        }
+        &-bg-img {
+            padding-top: 45%;
+            position: relative;
+            margin: 0 auto;
+            width: 50%;
+        }
+        img {
+            margin: initial;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            max-width: 90%;
+            width: 100%;
+            height: 100%;
+        }
+        hr {
+            background: var(--testimonial-text-hr-color);
+            height: 1px;
+            border: none;
+        }
+        blockquote {
+            background: rgba($color: #77dae6, $alpha: 0.2);
+            border-left: 3px solid #77dae6;
+            padding: 20px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+            a {
+                text-decoration: underline;
+            }
+        }
     }
 }

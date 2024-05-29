@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +41,7 @@
         <script type="module">
             load("#header", "./templates/header-sign-in.html");
         </script>
-        <main class="detail-product" style="height: 1000px">
+        <main class="detail-product">
             <div class="container">
                 <section class="breakcumbs">
                     <div class="detail-product__container">
@@ -77,14 +77,16 @@
                         <div class="row">
                             <div class="col col-5">
                                 <div class="product-info__thumbs">
-                                    <div class="product-info__main-thumb">
+                                    <div class="product-info__main-thumb js-main-img">
                                         <img class="product-info__main-thumb-item" src="./assets/img/products/product-1.svg" alt="" />
                                     </div>
                                     <div class="product-info__thumbs-sub">
-                                        <div class="product-info__thumb-sub-item"><img src="./assets/img/products/product-1.svg" alt="" /></div>
-                                        <div class="product-info__thumb-sub-item"><img src="./assets/img/products/product-2.svg" alt="" /></div>
-                                        <div class="product-info__thumb-sub-item"><img src="./assets/img/products/product-3.svg" alt="" /></div>
-                                        <div class="product-info__thumb-sub-item"><img src="./assets/img/products/product-4.svg" alt="" /></div>
+                                        <div class="product-info__thumb-sub-item js-sub-img active">
+                                            <img src="./assets/img/products/product-1.svg" alt="" />
+                                        </div>
+                                        <div class="product-info__thumb-sub-item js-sub-img"><img src="./assets/img/products/product-2.svg" alt="" /></div>
+                                        <div class="product-info__thumb-sub-item js-sub-img"><img src="./assets/img/products/product-3.svg" alt="" /></div>
+                                        <div class="product-info__thumb-sub-item js-sub-img"><img src="./assets/img/products/product-4.svg" alt="" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +96,7 @@
 
                                     <div class="product-info__card-form">
                                         <div class="row">
-                                            <div class="col col-6">
+                                            <div class="col col-5">
                                                 <div class="product-info__left">
                                                     <div class="product-info__reviews">
                                                         <img src="./assets/icon/star.svg" alt="" />
@@ -102,7 +104,7 @@
                                                     </div>
                                                     <div class="form-filter__form-size">
                                                         <span class="form-filter__title--small">Size/Weight</span>
-                                                        <div class="form-filter__weight-wrapper">
+                                                        <div class="form-filter__weight-wrapper product-info__form-weight">
                                                             <div class="form-filter__weight">
                                                                 <span>500g</span>
                                                                 <img src="./assets/icon/chevron-filter.svg" class="icon" alt="" />
@@ -121,7 +123,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col col-6">
+                                            <div class="col col-7">
                                                 <div class="product-info__right">
                                                     <div class="product-prop">
                                                         <div class="product-prop__item">
@@ -167,10 +169,363 @@
                         </div>
                     </div>
                 </section>
-                <div></div>
+
+                <div class="product-tab-list">
+                    <a href="#!"><span class="product-tab-item js-tab-list active">Description</span></a>
+                    <a href="#!"><span class="product-tab-item js-tab-list">Review (1100)</span></a>
+                    <a href="#!"><span class="product-tab-item js-tab-list">Similar</span></a>
+                </div>
+                <div class="row">
+                    <div class="col col-8">
+                        <div class="product-tab-content detail-product__desc js-tab-item active">
+                            <h2>Lorem ipsum dolor sit amet.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet <a href="#!">consectetur</a> adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum
+                                recusandae voluptates dignissimos similique animi assumenda <a href="#!">praesentium</a> et! Illum dolorem est rem voluptas nam!
+                                Voluptatem.
+                            </p>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <figure>
+                                <div class="product-tab-content-bg-img"><img src="./assets/img/products/product-1.svg" alt="" /></div>
+                                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                            </figure>
+                            <blockquote>
+                                Lorem ipsum dolor sit amet <a href="#!">consectetur</a> adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum
+                                recusandae voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </blockquote>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <hr />
+                            <h2>Lorem ipsum dolor sit amet.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet <a href="#!">consectetur</a> adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum
+                                recusandae voluptates dignissimos similique animi assumenda <a href="#!">praesentium</a> et! Illum dolorem est rem voluptas nam!
+                                Voluptatem.
+                            </p>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <figure>
+                                <div class="product-tab-content-bg-img"><img src="./assets/img/products/product-1.svg" alt="" /></div>
+                                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                            </figure>
+
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <hr />
+                            <h2>Lorem ipsum dolor sit amet.</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet <a href="#!">consectetur</a> adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum
+                                recusandae voluptates dignissimos similique animi assumenda <a href="#!">praesentium</a> et! Illum dolorem est rem voluptas nam!
+                                Voluptatem.
+                            </p>
+                            <h3>Lorem ipsum dolor sit amet.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                            <figure>
+                                <div class="product-tab-content-bg-img"><img src="./assets/img/products/product-1.svg" alt="" /></div>
+                                <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                            </figure>
+
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, cupiditate. Modi, quidem, ullam sint dolorum recusandae
+                                voluptates dignissimos similique animi assumenda praesentium et! Illum dolorem est rem voluptas nam! Voluptatem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-product__testimonial product-tab-testimonial js-tab-item">
+                    <h2 class="detail-product__testimonial-title">What our customers are saying</h2>
+                    <div class="testimonial">
+                        <div class="row">
+                            <!-- testimonial card 1 -->
+                            <div class="col-4 col">
+                                <div class="testimonial__card">
+                                    <div class="testimonial__row">
+                                        <img src="./assets/img/testimonial-img/avatar-1.jpg" alt="" class="testimonial__avatar" />
+                                        <div class="testimonial__name">
+                                            <h3>Jakir Hussen</h3>
+                                            <span>Great product, I love this Coffee Beans </span>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial__row">
+                                        <div class="testimonial__stars">
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star-half.svg" alt="" />
+                                            <img src="./assets/icon/star-line.svg" alt="" />
+                                        </div>
+                                        <span class="testimonial__review">(3.5) Review</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- testimonial card 2 -->
+                            <div class="col-4 col">
+                                <div class="testimonial__card">
+                                    <div class="testimonial__row">
+                                        <img src="./assets/img/testimonial-img/avatar-2.jpg" alt="" class="testimonial__avatar" />
+                                        <div class="testimonial__name">
+                                            <h3>Jubed Ahmed</h3>
+                                            <span>Awesome Coffee, I love this Coffee Beans </span>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial__row">
+                                        <div class="testimonial__stars">
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star-half.svg" alt="" />
+                                            <img src="./assets/icon/star-line.svg" alt="" />
+                                        </div>
+                                        <span class="testimonial__review">(3.5) Review</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- testimonial card 3 -->
+                            <div class="col-4 col">
+                                <div class="testimonial__card">
+                                    <div class="testimonial__row">
+                                        <img src="./assets/img/testimonial-img/avatar-3.jpg" alt="" class="testimonial__avatar" />
+                                        <div class="testimonial__name">
+                                            <h3>Delwar Hussain</h3>
+                                            <span>Great product, I like this Coffee Beans </span>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial__row">
+                                        <div class="testimonial__stars">
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star.svg" alt="" />
+                                            <img src="./assets/icon/star-half.svg" alt="" />
+                                            <img src="./assets/icon/star-line.svg" alt="" />
+                                        </div>
+                                        <span class="testimonial__review">(3.5) Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-product__similar js-tab-item">
+                    <div class="row">
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-3.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza - Caffè Espresso Black Tin - Ground coffee</h3></a
+                                >
+                                <span class="product-item-2__branch">welikecoffee</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$99.99</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">5.0</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-2.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza Coffee Blends - Try the Italian Espresso</h3></a
+                                >
+                                <span class="product-item-2__branch">Lavazza</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$53.00</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">3.4</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-3.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza - Caffè Espresso Black Tin - Ground coffee</h3></a
+                                >
+                                <span class="product-item-2__branch">welikecoffee</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$99.99</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">5.0</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-2.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza Coffee Blends - Try the Italian Espresso</h3></a
+                                >
+                                <span class="product-item-2__branch">Lavazza</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$53.00</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">3.4</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-1.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Coffee Beans - Espresso Arabica and Robusta Beans</h3></a
+                                >
+                                <span class="product-item-2__branch">Lavazza</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$47.00</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">4.3</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-3.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza - Caffè Espresso Black Tin - Ground coffee</h3></a
+                                >
+                                <span class="product-item-2__branch">welikecoffee</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$99.99</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">5.0</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-2.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Lavazza Coffee Blends - Try the Italian Espresso</h3></a
+                                >
+                                <span class="product-item-2__branch">Lavazza</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$53.00</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">3.4</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col col-3">
+                            <article class="product-item-2">
+                                <div class="product-item-2__img-wrapper">
+                                    <a href="./index-detail-product.html"
+                                        ><img src="./assets/img/products/product-1.svg" alt="" class="product-item-2__img"
+                                    /></a>
+                                    <div class="heart heart-circle">
+                                        <img class="icon" src="./assets/icon/heart-line.svg" alt="" />
+                                    </div>
+                                </div>
+                                <a href="./index-detail-product.html">
+                                    <h3 class="product-item-2__title line-clamp">Coffee Beans - Espresso Arabica and Robusta Beans</h3></a
+                                >
+                                <span class="product-item-2__branch">Lavazza</span>
+                                <div class="product-item-2__row">
+                                    <span class="product-item-2__price">$47.00</span>
+                                    <div class="product-item-2__rate-product">
+                                        <img src="./assets/icon/star.svg" alt="" class="product-item-2__star" />
+                                        <span class="product-item-2__rate">4.3</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
+
         <footer id="footer" class="footer"></footer>
+
         <script>
             load("#footer", "./templates/footer.html");
         </script>

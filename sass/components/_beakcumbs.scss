@@ -28,7 +28,7 @@
         white-space: nowrap;
 
         &--current {
-            color: inherit;
+            color: var(--breakcumbs-text-current-color);
         }
     }
 }
