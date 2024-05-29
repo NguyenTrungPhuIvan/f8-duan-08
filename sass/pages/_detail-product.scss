@@ -9,6 +9,9 @@ body:has(.detail-product) {
 
     &__container {
         margin-top: 30px;
+        @include ab.breakpoint(md) {
+            margin-top: 20px;
+        }
     }
 
     &__testimonial-title {

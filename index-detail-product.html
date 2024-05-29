@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,17 @@
         </script>
         <main class="detail-product">
             <div class="container">
-                <section class="breakcumbs">
+                <div class="search-form detail-product__search-form d-none d-md-block">
+                    <div class="detail-product__container">
+                        <div class="search-form__inner">
+                            <input class="search-form__input detail-product__search-input" type="search" placeholder="Search for item" />
+                            <button class="search-form__btn detail-product__search-btn">
+                                <img src="./assets/icon/search-filter.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="breakcumbs">
                     <div class="detail-product__container">
                         <div class="breakcumbs__inner">
                             <ul class="breakcumbs__list">
@@ -71,7 +81,7 @@
                             </ul>
                         </div>
                     </div>
-                </section>
+                </div>
                 <section class="product-info">
                     <div class="detail-product__container">
                         <div class="row">

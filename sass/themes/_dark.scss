@@ -117,4 +117,9 @@ html.dark {
     --testimonial-bg-color: #171c28;
     --testimonial-text-color: #fff;
     --testimonial-text-hr-color: #ebebeb;
+
+    // search-form
+    --search-form-text-color: #b9babe;
+    --search-form-bg-color: #171c28;
+    --search-form-filter-search: brightness(0) saturate(100%) invert(81%) sepia(10%) saturate(39%) hue-rotate(190deg) brightness(89%) contrast(96%);
 }
