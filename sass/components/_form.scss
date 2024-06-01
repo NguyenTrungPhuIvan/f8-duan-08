@@ -127,6 +127,7 @@
 
     &__arrow-up {
         filter: var(--filter-form-arrow-up);
+
         @include ab.breakpoint(sm) {
             display: none;
         }
@@ -139,7 +140,6 @@
     &__form-wapper {
         position: relative;
 
-        overflow-x: auto;
         width: min(1060px, 100%);
         padding: 30px;
         border-radius: 20px;
@@ -164,6 +164,7 @@
     &__row {
         display: flex;
         gap: 30px;
+        overflow-x: auto;
 
         margin-top: 30px;
         height: 100%;

@@ -40,6 +40,7 @@
     &__row {
         display: flex;
         align-items: center;
+
         @include ab.breakpoint(xl) {
             gap: 10px;
             flex-direction: column;
@@ -52,6 +53,10 @@
             flex-direction: row;
             justify-content: flex-start;
             text-align: left;
+        }
+
+        &--stars {
+            margin-top: auto;
         }
     }
 

@@ -21,6 +21,7 @@
                     <span class="nav-bars-btn__title">Card</span>
                     <span class="nav-bars-btn__qnt">3</span>
                 </a>
+
                 <a href="#!" class="nav-bars-btn d-none d-md-flex">
                     <img class="icon" src="./assets/icon/act-heart.svg" alt="" class="nav-bars-btn__icon" />
                     <span class="nav-bars-btn__title">Favorite</span>
@@ -3012,20 +3013,132 @@
             <div class="overlay-nav-bars js-toggle" toggle-target="#nav"></div>
             <div class="header__action">
                 <div class="action-group action-group--single d-md-none">
-                    <button class="action">
-                        <img class="icon" src="./assets/icon/act-search.svg" alt="" />
-                    </button>
+                    <divc class="action-search-wrapper">
+                        <button class="action action-search">
+                            <img class="icon" src="./assets/icon/act-search.svg" alt="" />
+                        </button>
+                    </divc>
                 </div>
                 <div class="action-group d-md-none">
-                    <button class="action">
-                        <img class="icon" src="./assets/icon/act-heart.svg" alt="" />
-                        <span class="act-span">03</span>
-                    </button>
+                    <div class="action-heart-wrapper">
+                        <button class="action action-heart">
+                            <img class="icon" src="./assets/icon/act-heart.svg" alt="" />
+                            <span class="act-span">03</span>
+                        </button>
+                        <div class="dropdown-cart">
+                            <div class="dropdown-cart__inner">
+                                <img src="../assets/icon/arrow-up-form-filter.svg" alt="" class="dropdown-cart__arrow-up" />
+                                <div class="dropdown-cart__top">
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__top-label">You have 3 item(s)</span>
+                                        <a href="#!" class="dropdown-cart__top-link">See All</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-cart__card-list">
+                                    <div class="row">
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-1.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Lavazza Coffee Blends </span>
+                                                <span class="dropdown-cart__card-price">$329.00</span>
+                                            </article>
+                                        </div>
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-2.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Coffee Beans Espresso</span>
+                                                <span class="dropdown-cart__card-price">$39.99</span>
+                                            </article>
+                                        </div>
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-3.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Qualità Oro Mountain</span>
+                                                <span class="dropdown-cart__card-price">$47.00</span>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-cart__btn-wrapper">
+                                    <a href="./index-checkout.html" class="dropdown-cart__btn btn btn__primary">Check Out All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="action-group__separate"></div>
-                    <button class="action">
-                        <img class="icon" src="./assets/icon/act-cart.svg" alt="" />
-                        <span class="act-span">$65.42</span>
-                    </button>
+                    <div class="action-cart-wrapper">
+                        <button class="action action-cart">
+                            <img class="icon" src="./assets/icon/act-cart.svg" alt="" />
+                            <span class="act-span">$65.42</span>
+                        </button>
+                        <div class="dropdown-cart">
+                            <div class="dropdown-cart__inner">
+                                <img src="../assets/icon/arrow-up-form-filter.svg" alt="" class="dropdown-cart__arrow-up" />
+                                <div class="dropdown-cart__top">
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__top-label">You have 3 item(s)</span>
+                                        <a href="./index-checkout.html" class="dropdown-cart__top-link">See All</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-cart__card-list">
+                                    <div class="row">
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-1.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Lavazza Coffee Blends </span>
+                                                <span class="dropdown-cart__card-price">$329.00</span>
+                                            </article>
+                                        </div>
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-2.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Coffee Beans Espresso</span>
+                                                <span class="dropdown-cart__card-price">$39.99</span>
+                                            </article>
+                                        </div>
+                                        <div class="col col-4">
+                                            <article class="dropdown-cart__card-item">
+                                                <div class="dropdown-cart__card-wrapper-img">
+                                                    <img src="./assets/img/products/product-3.svg" alt="" class="dropdown-cart__card-img" />
+                                                </div>
+                                                <span class="dropdown-cart__card-title">Qualità Oro Mountain</span>
+                                                <span class="dropdown-cart__card-price">$47.00</span>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-cart__bottom">
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__label">Subtotal</span> <span class="dropdown-cart__value">$415.99</span>
+                                    </div>
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__label">Texes</span> <span class="dropdown-cart__value">Free</span>
+                                    </div>
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__label">Shipping</span> <span class="dropdown-cart__value">$10.00</span>
+                                    </div>
+                                    <div class="dropdown-cart__row">
+                                        <span class="dropdown-cart__label dropdown-cart__total">Total Price</span>
+                                        <span class="dropdown-cart__value dropdown-cart__total">$425.99</span>
+                                    </div>
+                                </div>
+                                <div class="dropdown-cart__btn-wrapper">
+                                    <a href="./index-checkout.html" class="dropdown-cart__btn btn btn__primary">Check Out All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="avatar">

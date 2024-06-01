@@ -137,6 +137,7 @@ table {
 ::after,
 ::before {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -160,7 +161,6 @@ input {
   font-family: inherit;
   color: inherit;
   color: inherit;
-  -webkit-tap-highlight-color: transparent;
   padding: 0;
 }
 
@@ -194,6 +194,20 @@ a {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--line-clamp-numb, 3);
   overflow: hidden;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+u {
+  text-decoration: underline;
 }
 
 .row > *, .container-fluid, .container {

@@ -18,14 +18,14 @@
         line-height: 142.857%;
     }
     &__input {
-        background: var(--search-form-bg-color);
+        background: transparent;
         color: var(--search-form-text-color);
 
         width: 100%;
         border: none;
         font-size: 1.6rem;
         &::placeholder {
-            color: var(--search-form-text-color);
+            color: var(--search-form-placeholder-color);
         }
     }
     &__btn {

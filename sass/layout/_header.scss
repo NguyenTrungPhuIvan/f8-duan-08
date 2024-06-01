@@ -52,9 +52,7 @@
         .action-group {
             background: var(--header-action-gr-bg);
             @include ab.flexCenter($j: null);
-            padding: 10px 20px;
             border-radius: 8px;
-            column-gap: 20px;
             box-shadow: var(--header-action-gr-shadow);
             cursor: pointer;
             &__separate {
@@ -62,19 +60,43 @@
                 width: 1px;
                 height: 30px;
             }
-            &--single {
-                padding: 13px 13px;
+        }
+
+        .action-cart-wrapper,
+        .action-heart-wrapper,
+        .action-search {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            height: 50px;
+        }
+
+        .action-cart-wrapper,
+        .action-heart-wrapper {
+            position: relative;
+            &:hover .dropdown-cart {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(15px);
             }
         }
+
         .action {
             @include ab.flexCenter();
             column-gap: 10px;
             color: var(--text-primary-color);
 
             font-size: 1.5rem;
+
             font-weight: 500;
             line-height: 1.46;
-            cursor: pointer;
+
+            &-cart {
+                cursor: pointer;
+            }
+            &-heart {
+                cursor: pointer;
+            }
         }
 
         .avatar {
@@ -106,5 +128,132 @@
                 padding: 0 10px;
             }
         }
+    }
+}
+.dropdown-cart {
+    opacity: 0;
+    visibility: hidden;
+    transition: transform, opacity, visibility;
+    transition-duration: 0.3s;
+
+    position: absolute;
+    top: 35px;
+    right: -80px;
+    padding-top: 30px;
+    cursor: initial;
+    &__inner {
+        background: var(--dropdown-cart-bg-color);
+        box-shadow: var(--dropdown-cart-shadow);
+        border-radius: 20px;
+        width: min(600px, 100vw);
+        padding: 30px;
+        position: relative;
+    }
+    &__arrow-up {
+        position: absolute;
+        right: 90px;
+        top: -10px;
+        height: 26.5px;
+        filter: var(--dropdown-cart-arrow-filter);
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        color: var(--dropdown-cart-text-color);
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 145.455%;
+
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
+    &__top-label {
+        font-weight: 500;
+    }
+
+    &__top-link {
+        color: #0071dc;
+        font-size: 1.8rem;
+        line-height: 145.455%;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__card-list {
+        .row {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    }
+    &__card-item {
+        color: var(--dropdown-cart-text-color);
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+        text-align: left;
+        margin-bottom: 20px;
+        span {
+            display: inline-block;
+            margin-top: 6px;
+        }
+    }
+
+    &__card-price {
+        font-weight: 500;
+    }
+
+    &__card-wrapper-img {
+        margin-top: 20px;
+        position: relative;
+        padding-top: 100%;
+    }
+
+    &__card-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        border: 1px solid var(--dropdown-cart-border-img-color);
+    }
+
+    &__bottom {
+        padding: 20px 0;
+        border-width: 1px 0;
+        border-color: var(--dropdown-cart-border-color);
+        border-style: solid;
+    }
+
+    &__card-list {
+        color: var(--dropdown-cart-text-color);
+        font-size: 2.2rem;
+        line-height: 145.455%;
+
+        &--favour {
+        }
+    }
+
+    &__total {
+        font-weight: 500;
+    }
+
+    &__btn-wrapper {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__btn {
+        border-radius: 999px;
+        border: 999px;
+        height: 50px;
+        padding: 0 80px;
+        color: #1a162e;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 145.455%;
     }
 }
