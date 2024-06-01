@@ -102,7 +102,9 @@
                                                 <span class="cart-info__total">$47.00 </span>
                                                 <div class="cart-info__control checkout__cart-info__control">
                                                     <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                    <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                        <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -144,7 +146,9 @@
                                                 <span class="cart-info__total">$106.00</span>
                                                 <div class="cart-info__control checkout__cart-info__control">
                                                     <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                    <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                        <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -186,7 +190,9 @@
                                                 <span class="cart-info__total">$38.65 </span>
                                                 <div class="cart-info__control checkout__cart-info__control">
                                                     <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                    <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                        <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,5 +276,15 @@
         <script>
             load("#footer", "./templates/footer.html");
         </script>
+        <div id="delete-confirm" class="modal hide">
+            <div class="modal__content">
+                <p class="modal__text">Do you want to remove this item from shopping cart?</p>
+                <div class="modal__control">
+                    <button class="dmodal__btn-cancel btn btn__ouline js-toggle" toggle-target="#delete-confirm">Cancel</button>
+                    <button class="dmodal__btn-confirm btn btn__red js-toggle" toggle-target="#delete-confirm">Delete</button>
+                </div>
+            </div>
+            <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+        </div>
     </body>
 </html>
