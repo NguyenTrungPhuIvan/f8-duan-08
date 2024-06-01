@@ -196,6 +196,12 @@ body:has(.breakcumbs) .breakcumbs {
         max-width: 230px;
         margin-left: auto;
         height: 50px;
+        @include ab.breakpoint(md) {
+            margin-left: initial;
+            max-width: initial;
+            width: auto;
+            height: 40px;
+        }
     }
 }
 
@@ -220,6 +226,11 @@ body:has(.breakcumbs) .breakcumbs {
         display: flex;
         padding: 30px 0;
         border-bottom: 1px solid var(--cart-info-separate-color);
+        @include ab.breakpoint(md) {
+            &:last-child {
+                border-bottom: none;
+            }
+        }
     }
 
     &__thumb-wrapper {
@@ -276,7 +287,7 @@ body:has(.breakcumbs) .breakcumbs {
         }
 
         @include ab.breakpoint(md) {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             width: auto;
         }
     }
@@ -354,6 +365,7 @@ body:has(.breakcumbs) .breakcumbs {
         align-items: flex-end;
 
         @include ab.breakpoint(md) {
+            gap: 16px;
             align-items: flex-start;
             margin-left: 0;
         }
