@@ -1,3 +1,5 @@
+@use "../abstract" as ab;
+
 body:has(.checkout) {
     background: var(--checkout-bg);
 }
@@ -27,8 +29,15 @@ body:has(.breakcumbs) .breakcumbs {
         font-weight: 500;
         line-height: 144.444%;
 
+        @include ab.breakpoint(md) {
+            padding: 16px;
+        }
         &-title {
             font-size: 1.8rem;
+
+            @include ab.breakpoint(md) {
+                font-size: 1.6rem;
+            }
         }
         &-desc {
             margin-top: 10px;
@@ -38,9 +47,19 @@ body:has(.breakcumbs) .breakcumbs {
 
         &-img {
             padding: 10px;
+            height: 76px;
+            width: 76px;
             border-radius: 14px;
             background: var(--checkout-gift-bg);
             box-shadow: var(--checkout-left-shadow);
+            flex-shrink: 0;
+            img {
+                width: 100%;
+            }
+            @include ab.breakpoint(sm) {
+                height: 50px;
+                width: 50px;
+            }
         }
     }
 
@@ -96,7 +115,9 @@ body:has(.breakcumbs) .breakcumbs {
     background: var(--checkout-left-bg-color);
     border-radius: 20px;
     box-shadow: var(--checkout-left-shadow);
-
+    @include ab.breakpoint(md) {
+        padding: 16px;
+    }
     &__left-bottom {
         margin-top: 30px;
     }
@@ -143,6 +164,10 @@ body:has(.breakcumbs) .breakcumbs {
         & + & {
             margin-top: 12px;
         }
+
+        @include ab.breakpoint(md) {
+            font-size: 1.6rem;
+        }
     }
     &__separate {
         height: 1px;
@@ -161,6 +186,10 @@ body:has(.breakcumbs) .breakcumbs {
         font-size: 2rem;
         font-weight: 500;
         line-height: 145.455%;
+
+        @include ab.breakpoint(md) {
+            font-size: 1.6rem;
+        }
     }
 
     &__btn-2 {
@@ -177,6 +206,13 @@ body:has(.breakcumbs) .breakcumbs {
     border-radius: 20px;
     box-shadow: var(--checkout-left-shadow);
 
+    @include ab.breakpoint(md) {
+        padding: 20px;
+    }
+    @include ab.breakpoint(sm) {
+        padding: 16px;
+    }
+
     &__list {
         margin-top: -30px;
     }
@@ -192,12 +228,29 @@ body:has(.breakcumbs) .breakcumbs {
     &__thumb {
         width: 175px;
         height: 172px;
+        @include ab.breakpoint(lg) {
+            width: 120px;
+            height: 120px;
+        }
+        @include ab.breakpoint(md) {
+            width: 80px;
+            height: 80px;
+        }
+        @include ab.breakpoint(sm) {
+            width: 60px;
+            height: 60px;
+        }
     }
 
     &__content {
         display: flex;
         flex: 1;
         align-self: flex-start;
+
+        @include ab.breakpoint(md) {
+            gap: 16px;
+            flex-direction: column;
+        }
     }
 
     // item left
@@ -214,6 +267,18 @@ body:has(.breakcumbs) .breakcumbs {
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 144.444%;
+
+        @include ab.breakpoint(xxl) {
+            width: 300px;
+        }
+        @include ab.breakpoint(lg) {
+            width: 250px;
+        }
+
+        @include ab.breakpoint(md) {
+            font-size: 1.4rem;
+            width: auto;
+        }
     }
 
     &__price-wrapper {
@@ -230,6 +295,11 @@ body:has(.breakcumbs) .breakcumbs {
     &__wrapper-control {
         display: flex;
         gap: 20px;
+        @include ab.breakpoint(md) {
+            align-items: flex-start;
+            gap: 10px;
+            flex-direction: column;
+        }
     }
 
     &__control-input {
@@ -282,6 +352,11 @@ body:has(.breakcumbs) .breakcumbs {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @include ab.breakpoint(md) {
+            align-items: flex-start;
+            margin-left: 0;
+        }
     }
 
     &__total {
@@ -290,6 +365,10 @@ body:has(.breakcumbs) .breakcumbs {
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 145.455%;
+
+        @include ab.breakpoint(md) {
+            font-size: 1.8rem;
+        }
     }
 
     &__checkout-btn {
