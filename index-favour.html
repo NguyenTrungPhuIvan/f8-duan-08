@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,13 +49,15 @@
                             <div class="breakcumbs__inner">
                                 <ul class="breakcumbs__list">
                                     <li>
-                                        <a href="#!" class="breakcumbs__item">
+                                        <a href="./" class="breakcumbs__item">
                                             Home <img src="./assets/icon/arrow-breakcumbs.svg" alt="" class="breakcumbs__arrow" />
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="#!" class="breakcumbs__item breakcumbs__item--current">Favorite </a>
+                                        <h1>
+                                            <a href="./index-favour.html" class="breakcumbs__item breakcumbs__item--current">Favorite </a>
+                                        </h1>
                                     </li>
                                 </ul>
                             </div>
@@ -108,7 +110,9 @@
                                                         <button class="cart-info__control-btn">
                                                             <img src="./assets/icon/checkout-heart.svg" alt="" />Save
                                                         </button>
-                                                        <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                        <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                            <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,7 +160,9 @@
                                                         <button class="cart-info__control-btn">
                                                             <img src="./assets/icon/checkout-heart.svg" alt="" />Save
                                                         </button>
-                                                        <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                        <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                            <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -204,7 +210,9 @@
                                                         <button class="cart-info__control-btn">
                                                             <img src="./assets/icon/checkout-heart.svg" alt="" />Save
                                                         </button>
-                                                        <button class="cart-info__control-btn"><img src="./assets/icon/trash.svg" alt="" />Delete</button>
+                                                        <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
+                                                            <img src="./assets/icon/trash.svg" alt="" />Delete
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,5 +249,15 @@
         <script>
             load("#footer", "./templates/footer.html");
         </script>
+        <div id="delete-confirm" class="modal hide">
+            <div class="modal__content">
+                <p class="modal__text">Do you want to remove this item from shopping cart?</p>
+                <div class="modal__control">
+                    <button class="dmodal__btn-cancel btn btn__ouline js-toggle" toggle-target="#delete-confirm">Cancel</button>
+                    <button class="dmodal__btn-confirm btn btn__red js-toggle" toggle-target="#delete-confirm">Delete</button>
+                </div>
+            </div>
+            <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+        </div>
     </body>
 </html>

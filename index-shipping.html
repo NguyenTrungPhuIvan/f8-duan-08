@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,10 +53,15 @@
                                             Home <img src="./assets/icon/arrow-breakcumbs.svg" alt="" class="breakcumbs__arrow" />
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="./index-checkout.html" class="breakcumbs__item">
+                                            checkout <img src="./assets/icon/arrow-breakcumbs.svg" alt="" class="breakcumbs__arrow" />
+                                        </a>
+                                    </li>
 
                                     <li>
                                         <h1>
-                                            <a href="index-checkout.html" class="breakcumbs__item breakcumbs__item--current">Checkout </a>
+                                            <a href="./index-shipping.html" class="breakcumbs__item breakcumbs__item--current">Shipping </a>
                                         </h1>
                                     </li>
                                 </ul>
@@ -68,15 +73,86 @@
                     <div class="row">
                         <div class="col col-8 col-xl-12">
                             <div class="cart-info">
-                                <div class="cart-info__list">
-                                    <!-- checkout item 1 -->
+                                <h2 class="cart-info__title-h2">1. Shipping, arrives between Mon, May 16—Tue, May 24</h2>
+                                <div class="user-address user-address__shipping">
+                                    <div class="user-address__row user-address__row-top">
+                                        <div class="user-address__textbox-heading">
+                                            <h2 class="user-address__title user-address__text--bold user-address__text">Shipping address</h2>
+                                            <p class="user-address__desc user-address__text--semi user-address__text">Where should we deliver your order?</p>
+                                        </div>
+                                        <div class="user-address__btn-wrapper">
+                                            <button class="user-address__btn btn btn__primary btn__rounded">
+                                                <div class="user-address__btn-icon"><img src="./assets/icon/btn-plus.svg" alt="" /></div>
+                                                Add a new address
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="user-address__address-wrapper">
+                                        <div class="user-address__item">
+                                            <div class="user-address__row user-address__row-item">
+                                                <div class="user-address__item-left">
+                                                    <label class="user-address__checkbox-wrapper">
+                                                        <input class="user-address__checkbox" name="user-address" type="radio" hidden checked
+                                                    /></label>
+                                                    <div class="user-address__item-content">
+                                                        <div>
+                                                            <p class="user-address__item-name user-address__text--bold user-address__text">Imran Khan</p>
+                                                            <p class="user-address__item-desc user-address__text--semi user-address__text">
+                                                                Museum of Rajas, Sylhet Sadar, Sylhet 3100.
+                                                            </p>
+                                                        </div>
+                                                        <ul class="user-address__item-sub">
+                                                            <li class="user-address__text user-address__text--tiny">Shipping</li>
+                                                            <li class="user-address__text user-address__text--tiny">Delivery from store</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="user-address__item-right">
+                                                    <div class="user-address__edit">
+                                                        <img src="./assets/icon/edit.svg" alt="" />
+                                                        <span>Edit</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="user-address__row user-address__row-item">
+                                                <div class="user-address__item-left">
+                                                    <label class="user-address__checkbox-wrapper">
+                                                        <input class="user-address__checkbox" name="user-address" type="radio" hidden
+                                                    /></label>
+                                                    <div class="user-address__item-content">
+                                                        <div>
+                                                            <p class="user-address__item-name user-address__text--bold user-address__text">Imran Khan</p>
+                                                            <p class="user-address__item-desc user-address__text--semi user-address__text">
+                                                                Museum of Rajas, Sylhet Sadar, Sylhet 3100.
+                                                            </p>
+                                                        </div>
+                                                        <ul class="user-address__item-sub">
+                                                            <li class="user-address__text user-address__text--tiny">Shipping</li>
+                                                            <li class="user-address__text user-address__text--tiny">Delivery from store</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="user-address__item-right">
+                                                    <div class="user-address__edit">
+                                                        <img src="./assets/icon/edit.svg" alt="" />
+                                                        <span>Edit</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <h3 class="cart-info__title cart-info__title-shipping">Items details</h3>
+                                <div class="cart-info__list">
                                     <div class="cart-info__item">
                                         <div class="cart-info__thumb-wrapper">
                                             <a href="#!">
                                                 <img src="./assets/img/products/product-1.svg" alt="" class="cart-info__thumb" />
                                             </a>
                                         </div>
+                                        <!-- checkout item 1 -->
+
                                         <div class="cart-info__content">
                                             <div class="cart-info__left">
                                                 <h2 class="cart-info__title"><a href="#!">Coffee Beans - Espresso Arabica and Robusta Beans </a></h2>
@@ -202,31 +278,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cart-bill cart-info__bill d-md-none">
+                                <div class="cart-bill cart-info__bill">
                                     <div class="row">
-                                        <div class="col-8 col">
+                                        <div class="col-9 col col-md-8 col-sm-12">
                                             <div class="cart-bill__backshop-wrapper">
                                                 <a href=" #!" class="cart-bill__backshop"
                                                     ><img src="./assets/icon/arrow_down-checkout.svg" alt="" />Continue Shopping</a
                                                 >
                                             </div>
                                         </div>
-                                        <div class="col col-4">
-                                            <div class="cart-bill__bill">
-                                                <div class="cart-bill__row">
-                                                    <span class="cart-bill__label">Subtotal</span>
-                                                    <span class="cart-bill__value">$191.65</span>
-                                                </div>
-                                                <div class="cart-bill__row">
-                                                    <span class="cart-bill__label">Shipping</span>
-                                                    <span class="cart-bill__value">$10.00</span>
-                                                </div>
-                                                <div class="cart-bill__separate"></div>
-                                                <div class="cart-bill__row cart-bill__row--bold">
-                                                    <span class="cart-bill__label">Total</span>
-                                                    <span class="cart-bill__value">$201.65</span>
-                                                </div>
-                                            </div>
+                                        <div class="col col-3 col-md-4 col-sm-12 gy-sm-3">
+                                            <a href="./index-checkout.html" class="btn btn__primary btn__rounded cart-bill__btn-2">Continue</a>
                                         </div>
                                     </div>
                                 </div>
@@ -254,21 +316,8 @@
                                             <span class="cart-bill__value">$201.65</span>
                                         </div>
                                     </div>
-                                    <a href="./index-shipping.html" class="btn btn__primary btn__rounded cart-bill__btn">Continue to checkout</a>
                                 </div>
                             </div>
-
-                            <a href="#!">
-                                <div class="checkout__gift">
-                                    <div class="checkout__gift-img">
-                                        <img src="./assets/img/checkout/gift.svg" alt="" />
-                                    </div>
-                                    <div class="checkout__gift-content">
-                                        <h3 class="checkout__gift-title">Send this order as a gift.</h3>
-                                        <p class="checkout__gift-desc">Available items will be shipped to your gift recipient.</p>
-                                    </div>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>

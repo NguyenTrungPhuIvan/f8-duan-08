@@ -147,7 +147,8 @@ html.dark {
     --checkout-item-text-color: #b9babe;
     --checkout-item-total-color: #b9babe;
 
-    --cart-info-control-input-border: #292e39;
+    --cart-info-control-input-border: #d2d1d6;
+    --cart-info-control-input-filter: brightness(0) saturate(100%) invert(78%) sepia(3%) saturate(269%) hue-rotate(191deg) brightness(95%) contrast(93%);
 
     --checkout-gift-bg: #292e39;
 
