@@ -369,6 +369,26 @@ function handleClickHeart() {
             }
         };
     });
+
+    const heartSave = $$(".heart-save-wrapper");
+    const heartSaveIcon = $$(".heart-save-icon");
+    heartSave.forEach((heart, index) => {
+        heart.onclick = () => {
+            heart.classList.toggle(`active-${index}`);
+            const activeHeart = $(`.heart-save-wrapper.active-${index}`);
+            if (activeHeart) {
+                heartSaveIcon[index].src = "./assets/icon/red-heart.svg";
+                heartSaveIcon[index].style.width = "150%";
+                heartSaveIcon[index].style.position = "absolute";
+                heartSaveIcon[index].style.left = "-6px";
+                heartSaveIcon[index].style.top = "-2px";
+            } else {
+                heartSaveIcon[index].src = "./assets/icon/checkout-heart.svg";
+                heartSaveIcon[index].style.width = "100%";
+                heartSaveIcon[index].style.position = "initial";
+            }
+        };
+    });
 }
 
 window.addEventListener("template-loaded", addClickFilter);

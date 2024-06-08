@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,7 +81,7 @@
                                             <p class="user-address__desc user-address__text--semi user-address__text">Where should we deliver your order?</p>
                                         </div>
                                         <div class="user-address__btn-wrapper">
-                                            <button class="user-address__btn btn btn__primary btn__rounded">
+                                            <button class="user-address__btn btn btn__primary btn__rounded js-toggle" toggle-target="#add-new-address">
                                                 <div class="user-address__btn-icon"><img src="./assets/icon/btn-plus.svg" alt="" /></div>
                                                 Add a new address
                                             </button>
@@ -108,7 +108,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="user-address__item-right">
-                                                    <div class="user-address__edit">
+                                                    <div class="user-address__edit js-toggle" toggle-target="#modify-new-address ">
                                                         <img src="./assets/icon/edit.svg" alt="" />
                                                         <span>Edit</span>
                                                     </div>
@@ -133,7 +133,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="user-address__item-right">
-                                                    <div class="user-address__edit">
+                                                    <div class="user-address__edit js-toggle" toggle-target="#modify-new-address">
                                                         <img src="./assets/icon/edit.svg" alt="" />
                                                         <span>Edit</span>
                                                     </div>
@@ -181,7 +181,12 @@
                                             <div class="cart-info__right">
                                                 <span class="cart-info__total">$47.00 </span>
                                                 <div class="cart-info__control checkout__cart-info__control">
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
+                                                    <button class="cart-info__control-btn heart-save-wrapper">
+                                                        <div class="heart-save-icon-wrapper">
+                                                            <img class="heart-save-icon" src="./assets/icon/checkout-heart.svg" alt="" />
+                                                        </div>
+                                                        Save
+                                                    </button>
                                                     <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
                                                         <img src="./assets/icon/trash.svg" alt="" />Delete
                                                     </button>
@@ -225,7 +230,12 @@
                                             <div class="cart-info__right">
                                                 <span class="cart-info__total">$106.00</span>
                                                 <div class="cart-info__control checkout__cart-info__control">
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
+                                                    <button class="cart-info__control-btn heart-save-wrapper">
+                                                        <div class="heart-save-icon-wrapper">
+                                                            <img class="heart-save-icon" src="./assets/icon/checkout-heart.svg" alt="" />
+                                                        </div>
+                                                        Save
+                                                    </button>
                                                     <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
                                                         <img src="./assets/icon/trash.svg" alt="" />Delete
                                                     </button>
@@ -269,7 +279,12 @@
                                             <div class="cart-info__right">
                                                 <span class="cart-info__total">$38.65 </span>
                                                 <div class="cart-info__control checkout__cart-info__control">
-                                                    <button class="cart-info__control-btn"><img src="./assets/icon/checkout-heart.svg" alt="" />Save</button>
+                                                    <button class="cart-info__control-btn heart-save-wrapper">
+                                                        <div class="heart-save-icon-wrapper">
+                                                            <img class="heart-save-icon" src="./assets/icon/checkout-heart.svg" alt="" />
+                                                        </div>
+                                                        Save
+                                                    </button>
                                                     <button class="cart-info__control-btn js-toggle" toggle-target="#delete-confirm">
                                                         <img src="./assets/icon/trash.svg" alt="" />Delete
                                                     </button>
@@ -282,7 +297,7 @@
                                     <div class="row">
                                         <div class="col-9 col col-md-8 col-sm-12">
                                             <div class="cart-bill__backshop-wrapper">
-                                                <a href=" #!" class="cart-bill__backshop"
+                                                <a href=" ./" class="cart-bill__backshop"
                                                     ><img src="./assets/icon/arrow_down-checkout.svg" alt="" />Continue Shopping</a
                                                 >
                                             </div>
@@ -329,7 +344,7 @@
         <script>
             load("#footer", "./templates/footer.html");
         </script>
-        <div id="delete-confirm" class="modal hide">
+        <div id="delete-confirm" class="modal modal--small hide">
             <div class="modal__content">
                 <p class="modal__text">Do you want to remove this item from shopping cart?</p>
                 <div class="modal__control">
@@ -338,6 +353,116 @@
                 </div>
             </div>
             <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+        </div>
+        <div id="add-new-address" class="modal hide">
+            <div class="modal__content">
+                <h2 class="modal__title">Add new shipping address</h2>
+                <div class="modal__body">
+                    <form action="" class="form-block">
+                        <div class="modal__row">
+                            <div class="auth__form-wrapper js-formWrapper">
+                                <h3 class="modal__title--label modal__title">Name</h3>
+                                <div class="auth__form-group form-block__form-group js-formGroup">
+                                    <input type="text" class="form-block__input" placeholder="Name" required />
+                                </div>
+                                <span class="auth__error form-block__error js-error">Invalid name (2 characters or more)</span>
+                            </div>
+                            <div class="auth__form-wrapper js-formWrapper">
+                                <h3 class="modal__title--label modal__title">Phone</h3>
+
+                                <div class="auth__form-group form-block__form-group js-formGroup">
+                                    <input type="tel" class="form-block__input" placeholder="Phone" required />
+                                </div>
+                                <span class="auth__error form-block__error js-error">Invalid tel (10 characters or more)</span>
+                            </div>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <h3 class="modal__title--label modal__title">Address</h3>
+
+                            <div class="auth__form-group form-block__form-group form-block__textarea js-formGroup">
+                                <textarea class="form-block__textarea-input" name="address" placeholder="address" required></textarea>
+                            </div>
+                            <span class="auth__error form-block__error js-error">Invalid address (10 characters or more)</span>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <h3 class="modal__title--label modal__title">City/District/Town</h3>
+
+                            <div class="auth__form-group form-block__form-group js-formGroup">
+                                <input type="tel" class="form-block__input" placeholder="City/District/Town" required />
+                            </div>
+                        </div>
+                        <div class="auth__row">
+                            <div class="auth__form-group auth__policy">
+                                <label class="auth__label">
+                                    <input type="checkbox" id="auth__checkbox" hidden />
+
+                                    <p class="auth__policy-text">Set as default address</p>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal__control">
+                    <button class="dmodal__btn-cancel btn btn__ouline js-toggle" toggle-target="#add-new-address">Cancel</button>
+                    <button class="dmodal__btn-confirm btn btn__primary js-toggle" toggle-target="#add-new-address">Create</button>
+                </div>
+            </div>
+            <div class="modal__overlay"></div>
+        </div>
+        <div id="modify-new-address" class="modal hide">
+            <div class="modal__content">
+                <h2 class="modal__title">Modify shipping address</h2>
+                <div class="modal__body">
+                    <form action="" class="form-block">
+                        <div class="modal__row">
+                            <div class="auth__form-wrapper js-formWrapper">
+                                <h3 class="modal__title--label modal__title">Name</h3>
+                                <div class="auth__form-group form-block__form-group js-formGroup">
+                                    <input type="text" class="form-block__input" placeholder="Name" required />
+                                </div>
+                                <span class="auth__error form-block__error js-error">Invalid name (2 characters or more)</span>
+                            </div>
+                            <div class="auth__form-wrapper js-formWrapper">
+                                <h3 class="modal__title--label modal__title">Phone</h3>
+
+                                <div class="auth__form-group form-block__form-group js-formGroup">
+                                    <input type="tel" class="form-block__input" placeholder="Phone" required />
+                                </div>
+                                <span class="auth__error form-block__error js-error">Invalid tel (10 characters or more)</span>
+                            </div>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <h3 class="modal__title--label modal__title">Address</h3>
+
+                            <div class="auth__form-group form-block__form-group form-block__textarea js-formGroup">
+                                <textarea class="form-block__textarea-input" name="address" placeholder="address" required></textarea>
+                            </div>
+                            <span class="auth__error form-block__error js-error">Invalid address (10 characters or more)</span>
+                        </div>
+                        <div class="auth__form-wrapper js-formWrapper">
+                            <h3 class="modal__title--label modal__title">City/District/Town</h3>
+
+                            <div class="auth__form-group form-block__form-group js-formGroup">
+                                <input type="tel" class="form-block__input" placeholder="City/District/Town" required />
+                            </div>
+                        </div>
+                        <div class="auth__row">
+                            <div class="auth__form-group auth__policy">
+                                <label class="auth__label">
+                                    <input type="checkbox" id="auth__checkbox" hidden />
+
+                                    <p class="auth__policy-text">Set as default address</p>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal__control">
+                    <button class="dmodal__btn-cancel btn btn__ouline js-toggle" toggle-target="#modify-new-address">Cancel</button>
+                    <button class="dmodal__btn-confirm btn btn__primary js-toggle" toggle-target="#modify-new-address">Save</button>
+                </div>
+            </div>
+            <div class="modal__overlay"></div>
         </div>
     </body>
 </html>
